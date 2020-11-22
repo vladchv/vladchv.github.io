@@ -47,6 +47,37 @@ $('.b-a-slider').slick({
   ]
 });
 
+$('.where-slider').slick({
+  dots: false,
+  infinite: true,
+  speed: 1000,
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 1
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 1
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+  ]
+});
+
 //VIDEO
 var player;
 $(".play-img").click(function() {
@@ -55,7 +86,12 @@ $(".play-img").click(function() {
 		player = new YT.Player('player', {
 			height: '565',
 			width: '100%',
-			playerVars: { 'controls': 1,'autohide':1},
+			playerVars: {
+				'autoplay': 1,
+				'controls': 0, 
+				'rel' : 0,
+				'fs' : 0
+			},
 			videoId: 'r59xYe3Vyks',
 			events: {
 				'onReady': onPlayerReady,
@@ -77,6 +113,52 @@ $(".play-img").click(function() {
 			$(".player-container").append('<div id="player"></div>');
 			$(".play-img").fadeIn('slow');
 		}
+	}
+});
+
+var player2;
+$(".play-img-2").click(function() {
+	if($("#player2").is("div")) {
+		$(this).fadeOut('slow');
+		player2 = new YT.Player('player2', {
+			height: '565',
+			width: '100%',
+			playerVars: {
+				'autoplay': 1,
+				'controls': 0, 
+				'rel' : 0,
+				'fs' : 0
+			},
+			videoId: 'r59xYe3Vyks',
+			events: {
+				'onReady': onPlayerReady2,
+				'onStateChange': onPlayerStateChange2
+			}
+		});
+	} else {
+	player2.autohide=1;
+	player2.playVideo();
+	}
+
+	function onPlayerReady2(event) {
+		event.target.playVideo();
+	} 
+    
+	function onPlayerStateChange2(event) {        
+		if(event.data === 0) {            
+			$("#player2").remove(); 
+			$(".player-container-2").append('<div id="player2"></div>');
+			$(".play-img-2").fadeIn('slow');
+		}
+	}
+});
+
+//SCROLL BUTTONS
+$(window).scroll(function() {
+	if ($(this).scrollTop() >= 100) {
+		$('.stick-buttons').addClass('mod');
+	} else {
+		$('.stick-buttons').removeClass('mod');
 	}
 });
 
