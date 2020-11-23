@@ -78,6 +78,40 @@ $('.where-slider').slick({
   ]
 });
 
+$('.team-slider').slick({
+  dots: false,
+  infinite: true,
+  centerMode: true,
+  centerPadding: '0px',
+  speed: 1000,
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  initialSlide: 1,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 1
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 1
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+  ]
+});
+
 //VIDEO
 var player;
 $(".play-img").click(function() {
@@ -160,6 +194,36 @@ $(window).scroll(function() {
 	} else {
 		$('.stick-buttons').removeClass('mod');
 	}
+});
+
+//SlowSCROLL
+$('a.anchor').on('click', function (event) {
+	var anchor = $(this);
+	$('html, body').stop().animate({
+		scrollTop: $(anchor.attr('href')).offset().top
+	}, 500);
+	return false;
+});
+
+//POPUPS
+$('.open-modal').click( function(event){
+	var $open_data = '#'+$(this).attr('data-id');
+		event.preventDefault();
+		$('.overlay').fadeIn(200,
+		 	function(){
+				$($open_data)
+					.css('display', 'flex')
+					.animate({opacity: 1, top: '50%'}, 200);
+		});
+	});
+	$('.modal .close, .overlay').click( function(){
+		$('.modal')
+			.animate({opacity: 0, top: '50%'}, 200,
+				function(){
+					$(this).css('display', 'none');
+					$('.overlay').fadeOut(200);
+				}
+			);
 });
 
 });
