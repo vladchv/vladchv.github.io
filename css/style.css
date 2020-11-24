@@ -273,7 +273,7 @@ h1{text-align:center;}
 
 @media screen and (max-width:800px){
 .services .blocks .item:first-child{margin-left:20vw;}
-.services .blocks:before{left:inherit;right:0;transform:none;}
+.services .blocks:before{left:inherit;right:0;transform:none;width:65%;}
 .services .container{padding:0;}
 .services .title,.services h2{padding-left:15px;padding-right:15px;}
 }
@@ -300,6 +300,67 @@ h1 span{font-size:22px;}
 section h2{font-size:17px;}
 .b-a{padding:40px 0;}
 .b-a-slider{padding:30px 0;}
-.video h2{text-align:center;}
+.video h2,.essence h2{text-align:center;}
 .b-a-slider .slick-slide{opacity:1;}
+.b-a-slider .item{width:70%!important;margin:0 auto;}
+.b-a-slider .slick-track{padding:0;}
+.player-container{padding:30px 0 76px;}
+.about-video .title{font-size:15px;padding:0 0 20px 0;}
+.about-video .text p{font-size:12px;}
+.about-video{max-width:300px;padding:15px 15px 15px 35px;}
+#player{height:278px;}
+.play-img, .play-img-2{width:60px;height:60px;}
+.play-img img, .play-img-2 img{max-width:53px;left:5px;}
+.essence{padding:15px 0;}
+.list li{font-size:14px;padding:10px 0 10px 50px;background-size:15px;}
+.essence .left{max-width:340px;margin:0 auto;}
+#player2{height:270px;}
+.play-img-2{right:27%;}
+.essence .left{padding:0 25px 20px 25px;}
+.essence .full p{font-size:12px;}
+.essence .full{padding:20px;margin:90px 0 0 0;}
+.essence .button{bottom:110px;}
+.essence h2{font-size:23px;padding:0;}
+.services{padding:20px 0;}
+.services .title{font-size:16px;}
+.services .blocks{padding:50px 0;}
+.services .blocks{flex-wrap:wrap;}
+.two-blocks{width:780px;min-width:auto;justify-content:flex-start;}
+.services .blocks{width:100%;overflow:inherit;}
+.map .left{font-size:18px;padding:30px 40px;}
+.map .right{font-size:13px;padding:20px 30px;}
+.map .wrap{height:415px;}
+.order{padding-top:0px;}
+.order .right .button{font-size:11px;max-width:218px;padding:10px 25px;margin: -29px auto 0 auto;}
+.where{padding:30px 0;}
+.where h2,.steps h2,.team h2,.popup-title{font-size:21px;text-align:center;}
+.steps{padding:50px 0;}
+.steps h2{padding:0 0 20px 0;}
+.list-number{max-width:320px;margin:0 auto;}
+.list-number li{font-size:13px;padding:8px 0 8px 45px;}
+.list-number li:before{width:30px;height:30px;font-size:14px;}
+.list-number li:not(:last-child)::after{width:7px;height:72px;left:11px;background-size:7px;bottom:-36px;}
+.team{padding:20px 0;}
+.team-slider .item .name{font-size:14px;}
+.promo{padding:30px 15px;}
+.team-slider .item p,.promo h2{font-size:13px;}
+.button.arrow:after{width:10px;}
+footer{padding:20px 0;font-size:11px;}
+.button{white-space:nowrap;}
+.order .right .button{white-space:normal;}
+.slick-slider button{width:35px;height:35px;}
+.slick-slider i{padding:3px;}
+.slick-slider .left{margin-left:3px;}
+.popup-desc{font-size:14px;}
+}
+
+@media screen and (max-width:480px){
+.essence .button{bottom:120px;}
+.play-img-2{right:20px;}
+.close{right:40px;top:0px;}
+}
+
+@media screen and (max-width:409px){
+.essence .button{bottom:130px;}
+.play-img-2{right:0;}
 }
