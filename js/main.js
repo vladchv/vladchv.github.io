@@ -24,24 +24,18 @@ $('.b-a-slider').slick({
   slidesToScroll: 1,
   responsive: [
     {
-      breakpoint: 1024,
-      settings: {
-        slidesToShow: 5,
-        slidesToScroll: 1
-      }
-    },
-    {
-      breakpoint: 600,
+      breakpoint: 1150,
       settings: {
         slidesToShow: 3,
-        slidesToScroll: 1
+        slidesToScroll: 1,
       }
     },
     {
-      breakpoint: 480,
+      breakpoint: 710,
       settings: {
         slidesToShow: 1,
-        slidesToScroll: 1
+        slidesToScroll: 1,
+		centerMode: false,
       }
     }
   ]
@@ -55,21 +49,14 @@ $('.where-slider').slick({
   slidesToScroll: 1,
   responsive: [
     {
-      breakpoint: 1024,
+      breakpoint: 920,
       settings: {
-        slidesToShow: 3,
+        slidesToShow: 2,
         slidesToScroll: 1
       }
     },
     {
-      breakpoint: 600,
-      settings: {
-        slidesToShow: 3,
-        slidesToScroll: 1
-      }
-    },
-    {
-      breakpoint: 480,
+      breakpoint: 650,
       settings: {
         slidesToShow: 1,
         slidesToScroll: 1
@@ -89,24 +76,11 @@ $('.team-slider').slick({
   initialSlide: 1,
   responsive: [
     {
-      breakpoint: 1024,
-      settings: {
-        slidesToShow: 3,
-        slidesToScroll: 1
-      }
-    },
-    {
-      breakpoint: 600,
-      settings: {
-        slidesToShow: 3,
-        slidesToScroll: 1
-      }
-    },
-    {
-      breakpoint: 480,
+      breakpoint: 910,
       settings: {
         slidesToShow: 1,
-        slidesToScroll: 1
+        slidesToScroll: 1,
+		initialSlide: 0,
       }
     }
   ]
@@ -188,13 +162,21 @@ $(".play-img-2").click(function() {
 });
 
 //SCROLL BUTTONS
-$(window).scroll(function() {
-	if ($(this).scrollTop() >= 100) {
-		$('.stick-buttons').addClass('mod');
-	} else {
-		$('.stick-buttons').removeClass('mod');
-	}
-});
+if ($(window).width() > 900) {
+	
+	$(window).scroll(function() {
+		if ($(this).scrollTop() >= 100) {
+			$('.stick-buttons').addClass('mod');
+		} else {
+			$('.stick-buttons').removeClass('mod');
+		}
+	});
+	
+} else {
+	
+	$('.stick-buttons').addClass('mod');
+	
+}
 
 //SlowSCROLL
 $('a.anchor').on('click', function (event) {
