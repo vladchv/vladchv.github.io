@@ -100,7 +100,7 @@ $(".play-img").click(function() {
 				'rel' : 0,
 				'fs' : 0
 			},
-			videoId: 'r59xYe3Vyks',
+			videoId: 'mzJe5yKeLiE',
 			events: {
 				'onReady': onPlayerReady,
 				'onStateChange': onPlayerStateChange
