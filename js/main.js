@@ -124,42 +124,57 @@ $(".play-img").click(function() {
 	}
 });
 
+
+
+
+
+	
+	
+	
+	
+$(window).scroll(function() {
+	
 var player2;
-$(".play-img-2").click(function() {
-	if($("#player2").is("div")) {
-		$(this).fadeOut('slow');
+var top_of_element = $("#essence").offset().top;
+var bottom_of_element = $("#essence").offset().top + $("#essence").outerHeight();
+var bottom_of_screen = $(window).scrollTop() + $(window).height();
+var top_of_screen = $(window).scrollTop();
+	
+	
+    
+
+    if((bottom_of_screen > top_of_element) && (top_of_screen < bottom_of_element)){
+		
+		window.YT.ready(function() {
 		player2 = new YT.Player('player2', {
-			height: '565',
-			width: '100%',
-			playerVars: {
-				'autoplay': 1,
-				'controls': 0, 
-				'rel' : 0,
-				'fs' : 0
-			},
-			videoId: 'r59xYe3Vyks',
-			events: {
-				'onReady': onPlayerReady2,
-				'onStateChange': onPlayerStateChange2
+          videoId: 'mzJe5yKeLiE', // YouTube Video ID
+          width: '100%', // Player width (in px)
+          playerVars: {
+            autoplay: 1, // Auto-play the video on load
+            controls: 0, // Show pause/play buttons in player
+            showinfo: 0, // Hide the video title
+            modestbranding: 1, // Hide the Youtube Logo
+            loop: 1, // Run the video in a loop
+            fs: 0, // Hide the full screen button
+            cc_load_policy: 0, // Hide closed captions
+            iv_load_policy: 3, // Hide the Video Annotations
+            autohide: 1, // Hide video controls when playing
+            rel: 0
 			}
 		});
-	} else {
-	player2.autohide=1;
-	player2.playVideo();
-	}
-
-	function onPlayerReady2(event) {
-		event.target.playVideo();
-	} 
-    
-	function onPlayerStateChange2(event) {        
-		if(event.data === 0) {            
-			$("#player2").remove(); 
-			$(".player-container-2").append('<div id="player2"></div>');
-			$(".play-img-2").fadeIn('slow');
-		}
-	}
+		});
+		
+		$(".play-img-2").fadeOut('slow');
+    }
+    else {
+        $("#player2").remove();
+		$(".player-container-2").append('<div id="player2"></div>');
+		$(".play-img-2").fadeIn('slow');
+    }
+  
 });
+
+
 
 //SCROLL BUTTONS
 if ($(window).width() > 900) {
