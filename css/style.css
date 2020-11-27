@@ -219,7 +219,10 @@ input::placeholder{font-family:Vida;font-size:16px;font-weight:400;color:#999;tr
 input:focus::placeholder{color:transparent;}
 .popup-form button{font-family:Vida;border:0px!important;cursor:pointer;font-size:100%;transition:.25s;font-weight:500;margin:10px 0 0 0;}
 .two-blocks{width:100%;}
-
+video::-webkit-media-controls{display:none!important;}
+#player2{display:flex;align-items:center;justify-content:center;}
+#player2.no-bg{background:#fff!important;}
+video:focus{outline:none;}
 
 @media screen and (max-width:1400px){
 .b-a-slider{margin:0;}

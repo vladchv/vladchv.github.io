@@ -130,42 +130,16 @@ var top_of_element = $("#essence").offset().top;
 var bottom_of_element = $("#essence").offset().top + $("#essence").outerHeight();
 var bottom_of_screen = $(window).scrollTop() + $(window).height();
 var top_of_screen = $(window).scrollTop();
-	
-window.YT.ready(function() {
-		player2 = new YT.Player('player2', {
-          videoId: 'mzJe5yKeLiE', // YouTube Video ID
-          width: '100%', // Player width (in px)
-          playerVars: {
-            autoplay: 1, // Auto-play the video on load
-            controls: 1, // Show pause/play buttons in player
-            showinfo: 0, // Hide the video title
-            modestbranding: 1, // Hide the Youtube Logo
-            loop: 1, // Run the video in a loop
-            fs: 0, // Hide the full screen button
-            cc_load_policy: 0, // Hide closed captions
-            iv_load_policy: 3, // Hide the Video Annotations
-            autohide: 1, // Hide video controls when playing
-            rel: 0
-			},
-			events: {
-				'onReady': onPlayerReady,
-				}
-		});
-		
-		
-		function onPlayerReady(e) {
-			e.target.setVolume(0);
-		}
-    });
+
 
     if((bottom_of_screen > top_of_element) && (top_of_screen < bottom_of_element)){
-		$(".play-img-2").fadeOut('slow');
-		
+		$(".play-img-2").fadeOut('fast');
+		$("#player2").addClass('no-bg');
     }
     else {
-        $("#player2").remove();
-		$(".player-container-2").append('<div id="player2"></div>');
-		$(".play-img-2").fadeIn('slow');
+        //$("#player2").remove();
+		//$(".player-container-2").append('<div id="player2"><video id="video-2" width="100%" height="320" controls="controls" autoplay muted loop><source src="video/video-2.mp4" type="video/mp4"></video></div>');
+		$(".play-img-2").fadeIn('fast');
     }
   
 });
