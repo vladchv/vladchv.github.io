@@ -152,7 +152,7 @@ h2 span.blue{color:#009edf;}
 .order .right .button{height:auto;font-size:21px;font-weight:700;text-transform:uppercase;position:absolute;right:0;top:50%;transform:translateY(-50%);padding:20px 45px;text-align:center;max-width:395px;}
 .where{padding:75px 0;}
 .where .container{flex-direction:column;}
-.where .slick-slide img{margin:0 auto;max-width:100%;height:auto;}
+.where .slick-slide img{margin:0 auto;max-width:100%;width:100%;height:292px;object-fit:cover;}
 .where h2 {padding:0 0 65px 0;}
 .where-slider .item{padding:0 8px;}
 .where-slider .slick-list{width:100%;max-width:980px;margin:0 auto;}
