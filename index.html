@@ -1,0 +1,1509 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>API «Stocks&Orders» V 1.05</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js"></script>
+ </head>
+ <body>
+	<header>
+		<div class="container">
+			<h1>API «Stocks&Orders» V 1.05</h1>
+			<p>Ссылки, представленные ниже, ведут в тестовую базу - "песочницу". Рабочая база работает через протокол HTTPS</p>
+			<div class="btn-menu">
+				<span class="bar"></span>
+			</div>
+		</div>
+	</header>
+	<section class="row">
+		<div class="container">
+			<div class="sidebar-wrap">
+				<div class="sidebar">
+					<div class="widget">
+						<h2 class="active">Методы, запросы <i class="arrow"></i></h2>
+						<div class="widget-content open" style="display:flex;">
+							<ul class="anchors">
+								<li><a href="#Authorization">Authorization</a></li>
+								<li><a href="#CheckGoods">CheckGoods</a></li>
+								<li><a href="#CheckReturn">CheckReturn</a></li>
+								<li><a href="#CheckStock">CheckStock</a></li>
+								<li><a href="#CheckStockByRows">CheckStockByRows</a></li>
+								<li><a href="#GetBrands">GetBrands</a></li>
+								<li><a href="#GetCanceled">GetCanceled</a></li>
+								<li><a href="#GetChangedOrders">GetChangedOrders</a></li>
+								<li><a href="#GetClosed">GetClosed</a></li>
+								<li><a href="#GetDocs">GetDocs</a></li>
+								<li><a href="#GetGoods">GetGoods</a></li>
+								<li><a href="#GetGoodsForAssociation">GetGoodsForAssociation <span>Новый!</span></a></li>
+								<li><a href="#GetNewOrders">GetNewOrders</a></li>
+								<li><a href="#GetOrder">GetOrder</a></li>
+								<li><a href="#GetPacks">GetPacks</a></li>
+								<li><a href="#GetPartnerStock">GetPartnerStock</a></li>
+								<li><a href="#GetReadyToPack">GetReadyToPack</a></li>
+								<li><a href="#GetReturns">GetReturns</a></li>
+								<li><a href="#GetStatus">GetStatus</a></li>
+								<li><a href="#Pack">Pack <span>Внимание! Изменился type - стал равным</span></a></li>
+								<li><a href="#SetPrice">Set Price <span>Новый метод, установки цены</span></a></li>
+								<li><a href="#SetStatus">SetStatus</a></li>
+								<li><a href="#StockSync">StockSync <span>Добавилась возможность отправлять только Barcode и Количество</span></a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="widget">
+						<h2>Дополнительная документация:</h2>
+						<div class="widget-content">
+							<ul>
+								<li><a href="https://russianxff.com/static/St_v1_3.pdf" target="_blank">Статусы заказов</a></li>
+								<li><a href="https://russianxff.com/static/API.pdf" target="_blank">Использование API</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="widget">
+						<h2>Изменения в API v1.03:</h2>
+						<div class="widget-content">
+							<p class="date">20.02.2020</p>
+							<ul>
+								<li><a href="#SetPrice">SetPrice <span>Новый метод, установки цены</span></a></li>
+								<li><a href="#StockSync">StockSync <span>Добавилась возможность отправлять только Barcode и Количество</span></a></li>
+								<li><a href="#Pack">Изменен метод Pack <span>Теперь достаточно послать ORDERID и BOXID, чтобы упаковать заказ</span></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="content">
+				<div class="card" id="GetBrands">
+					<div class="title">GetBrands</div>
+					<table class="card-wrap">
+						<tr>
+							<td>Ссылка</td>
+							<td><a href="http://45.9.72.56/test_ib/hs/stocks/fGet/?token=8cFStx5H3x7fBfjrxrWZ&partnerID=134&type=2" target="_blank">http://45.9.72.56/test_ib/hs/stocks/fGet/?token=8cFStx5H3x7fBfjrxrWZ&partnerID=134&type=2</a></td>
+						</tr>
+						<tr>
+							<td>Описание</td>
+							<td>Получить список Брендов</td>
+						</tr>
+						<tr>
+							<td>Тип метода</td>
+							<td>GET</td>
+						</tr>
+						<tr>
+							<td>Пример ответа</td>
+							<td><a href="#AnsGetBrands">Подробнее...</a></td>
+						</tr>
+						<tr>
+							<td>Тело запроса</td>
+							<td></td>
+						</tr>
+					</table>
+				</div>
+				<div class="card" id="GetCanceled">
+					<div class="title">GetCanceled</div>
+					<table class="card-wrap">
+						<tr>
+							<td>Ссылка</td>
+							<td><a href="http://45.9.72.56/test_ib/hs/orders/fGet/?token=8cFStx5H3x7fBfjrxrWZ&amp;partnerID=134&amp;type=6" target="_blank">http://45.9.72.56/test_ib/hs/orders/fGet/?token=8cFStx5H3x7fBfjrxrWZ&amp;partnerID=134&amp;type=6</a></td>
+						</tr>
+						<tr>
+							<td>Описание</td>
+							<td>Получить Заказы со статусом Отменен за последние 62 дня</td>
+						</tr>
+						<tr>
+							<td>Тип метода</td>
+							<td>GET</td>
+						</tr>
+						<tr>
+							<td>Пример ответа</td>
+							<td><a href="#AnsGetCanceled">Подробнее...</a></td>
+						</tr>
+						<tr>
+							<td>Тело запроса</td>
+							<td></td>
+						</tr>
+					</table>
+				</div>
+				<div class="card" id="GetChangedOrders">
+					<div class="title">GetChangedOrders</div>
+					<table class="card-wrap">
+						<tr>
+							<td>Ссылка</td>
+							<td><a href="http://45.9.72.56/test_ib/hs/orders/fGet/?token=8cFStx5H3x7fBfjrxrWZ&partnerID=134&type=2" target="_blank">http://45.9.72.56/test_ib/hs/orders/fGet/?token=8cFStx5H3x7fBfjrxrWZ&partnerID=134&type=2</a></td>
+						</tr>
+						<tr>
+							<td>Описание</td>
+							<td>Получить полную информацию о заказах, которые изменились</td>
+						</tr>
+						<tr>
+							<td>Тип метода</td>
+							<td>GET</td>
+						</tr>
+						<tr>
+							<td>Пример ответа</td>
+							<td><a href="#AnsGetChangedOrders">Подробнее...</a></td>
+						</tr>
+						<tr>
+							<td>Тело запроса</td>
+							<td></td>
+						</tr>
+					</table>
+				</div>
+				<div class="card" id="GetClosed">
+					<div class="title">GetClosed</div>
+					<table class="card-wrap">
+						<tr>
+							<td>Ссылка</td>
+							<td><a href="http://45.9.72.56/test_ib/hs/orders/fGet/?token=8cFStx5H3x7fBfjrxrWZ&partnerID=134&type=7" target="_blank">http://45.9.72.56/test_ib/hs/orders/fGet/?token=8cFStx5H3x7fBfjrxrWZ&partnerID=134&type=7</a></td>
+						</tr>
+						<tr>
+							<td>Описание</td>
+							<td>Получить Заказы со статусом ЗАКРЫТ за последние 62 дня</td>
+						</tr>
+						<tr>
+							<td>Тип метода</td>
+							<td>GET</td>
+						</tr>
+						<tr>
+							<td>Пример ответа</td>
+							<td><a href="#AnsGetClosed">Подробнее...</a></td>
+						</tr>
+						<tr>
+							<td>Тело запроса</td>
+							<td></td>
+						</tr>
+					</table>
+				</div>
+				<div class="card" id="GetDocs">
+					<div class="title">GetDocs</div>
+					<table class="card-wrap">
+						<tr>
+							<td>Ссылка</td>
+							<td><a href="http://45.9.72.56/test_ib/hs/orders/fPost/?token=8cFStx5H3x7fBfjrxrWZ&partnerID=134&type=5" target="_blank">http://45.9.72.56/test_ib/hs/orders/fPost/?token=8cFStx5H3x7fBfjrxrWZ&partnerID=134&type=5</a></td>
+						</tr>
+						<tr>
+							<td>Описание</td>
+							<td>Получить ссылки на сопроводительные документы (если они есть)</td>
+						</tr>
+						<tr>
+							<td>Тип метода</td>
+							<td>POST</td>
+						</tr>
+						<tr>
+							<td>Пример ответа</td>
+							<td><a href="#AnsGetDocs">Подробнее...</a></td>
+						</tr>
+						<tr>
+							<td>Тело запроса</td>
+							<td>
+							<pre><code class="language-json">
+							["5898957"]
+							</code></pre>
+							</td>
+						</tr>
+					</table>
+				</div>
+				<div class="card" id="GetGoods">
+					<div class="title">GetGoods</div>
+					<table class="card-wrap">
+						<tr>
+							<td>Ссылка</td>
+							<td><a href="http://45.9.72.56/test_ib/hs/stocks/fGet/?token=8cFStx5H3x7fBfjrxrWZ&partnerID=134&type=1" target="_blank">http://45.9.72.56/test_ib/hs/stocks/fGet/?token=8cFStx5H3x7fBfjrxrWZ&partnerID=134&type=1</a></td>
+						</tr>
+						<tr>
+							<td>Описание</td>
+							<td>Получить УЖЕ ассоциированные товары</td>
+						</tr>
+						<tr>
+							<td>Тип метода</td>
+							<td>GET</td>
+						</tr>
+						<tr>
+							<td>Пример ответа</td>
+							<td><a href="#AnsGetGoods">Подробнее...</a></td>
+						</tr>
+						<tr>
+							<td>Тело запроса</td>
+							<td></td>
+						</tr>
+					</table>
+				</div>
+				<div class="card" id="GetGoodsForAssociation">
+					<div class="title">GetGoodsForAssociation</div>
+					<table class="card-wrap">
+						<tr>
+							<td>Ссылка</td>
+							<td><a href="http://45.9.72.56/test_ib/hs/stocks/fGet/?token=8cFStx5H3x7fBfjrxrWZ&partnerID=134&type=3" target="_blank">http://45.9.72.56/test_ib/hs/stocks/fGet/?token=8cFStx5H3x7fBfjrxrWZ&partnerID=134&type=3</a></td>
+						</tr>
+						<tr>
+							<td>Описание</td>
+							<td>Получить товары, которые проходят ассоциацию. (Еще не заассоциированы)</td>
+						</tr>
+						<tr>
+							<td>Тип метода</td>
+							<td>GET</td>
+						</tr>
+						<tr>
+							<td>Пример ответа</td>
+							<td><a href="#AnsGetGoodsForAssociation">Подробнее...</a></td>
+						</tr>
+						<tr>
+							<td>Тело запроса</td>
+							<td></td>
+						</tr>
+					</table>
+				</div>
+				<div class="card" id="GetNewOrders">
+					<div class="title">GetNewOrders</div>
+					<table class="card-wrap">
+						<tr>
+							<td>Ссылка</td>
+							<td><a href="http://45.9.72.56/test_ib/hs/orders/fGet/?token=8cFStx5H3x7fBfjrxrWZ&partnerID=134&type=1" target="_blank">http://45.9.72.56/test_ib/hs/orders/fGet/?token=8cFStx5H3x7fBfjrxrWZ&partnerID=134&type=1</a></td>
+						</tr>
+						<tr>
+							<td>Описание</td>
+							<td>Получить полную информацию о заказах, которые находятся в статусе НОВЫЙ и ожидают подтверждения</td>
+						</tr>
+						<tr>
+							<td>Тип метода</td>
+							<td>GET</td>
+						</tr>
+						<tr>
+							<td>Пример ответа</td>
+							<td><a href="#AnsGetNewOrders">Подробнее...</a></td>
+						</tr>
+						<tr>
+							<td>Тело запроса</td>
+							<td></td>
+						</tr>
+					</table>
+				</div>
+				<div class="card" id="GetOrder">
+					<div class="title">GetOrder</div>
+					<table class="card-wrap">
+						<tr>
+							<td>Ссылка</td>
+							<td><a href="http://45.9.72.56/test_ib/hs/orders/fPost/?token=8cFStx5H3x7fBfjrxrWZ&partnerID=134&type=1" target="_blank">http://45.9.72.56/test_ib/hs/orders/fPost/?token=8cFStx5H3x7fBfjrxrWZ&partnerID=134&type=1</a></td>
+						</tr>
+						<tr>
+							<td>Описание</td>
+							<td>Получить всю информацию о заказе</td>
+						</tr>
+						<tr>
+							<td>Тип метода</td>
+							<td>POST</td>
+						</tr>
+						<tr>
+							<td>Пример ответа</td>
+							<td><a href="#AnsGetOrder">Подробнее...</a></td>
+						</tr>
+						<tr>
+							<td>Тело запроса</td>
+							<td>
+							<pre><code class="language-json">
+							["5898957"]
+							</code></pre>
+							</td>
+						</tr>
+					</table>
+				</div>
+				<div class="card" id="GetPacks">
+					<div class="title">GetPacks</div>
+					<table class="card-wrap">
+						<tr>
+							<td>Ссылка</td>
+							<td><a href="http://45.9.72.56/test_ib/hs/orders/fGet/?token=8cFStx5H3x7fBfjrxrWZ&partnerID=134&type=3" target="_blank">http://45.9.72.56/test_ib/hs/orders/fGet/?token=8cFStx5H3x7fBfjrxrWZ&partnerID=134&type=3</a></td>
+						</tr>
+						<tr>
+							<td>Описание</td>
+							<td>Получить виды (типы) упаковок, в которые можно упаковывать товары из заказа</td>
+						</tr>
+						<tr>
+							<td>Тип метода</td>
+							<td>GET</td>
+						</tr>
+						<tr>
+							<td>Пример ответа</td>
+							<td><a href="#AnsGetPacks">Подробнее...</a></td>
+						</tr>
+						<tr>
+							<td>Тело запроса</td>
+							<td></td>
+						</tr>
+					</table>
+				</div>
+				<div class="card" id="GetPartnerStock">
+					<div class="title">GetPartnerStock</div>
+					<table class="card-wrap">
+						<tr>
+							<td>Ссылка</td>
+							<td><a href="http://45.9.72.56/test_ib/hs/stocks/fGet/?token=8cFStx5H3x7fBfjrxrWZ&partnerID=134&type=7" target="_blank">http://45.9.72.56/test_ib/hs/stocks/fGet/?token=8cFStx5H3x7fBfjrxrWZ&partnerID=134&type=7</a></td>
+						</tr>
+						<tr>
+							<td>Описание</td>
+							<td>Получить текущие остатки</td>
+						</tr>
+						<tr>
+							<td>Тип метода</td>
+							<td>GET</td>
+						</tr>
+						<tr>
+							<td>Пример ответа</td>
+							<td><a href="#AnsGetPartnerStock">Подробнее...</a></td>
+						</tr>
+						<tr>
+							<td>Тело запроса</td>
+							<td></td>
+						</tr>
+					</table>
+				</div>
+				<div class="card" id="GetReadyToPack">
+					<div class="title">GetReadyToPack</div>
+					<table class="card-wrap">
+						<tr>
+							<td>Ссылка</td>
+							<td><a href="http://45.9.72.56/test_ib/hs/orders/fGet/?token=8cFStx5H3x7fBfjrxrWZ&partnerID=134&type=4" target="_blank">http://45.9.72.56/test_ib/hs/orders/fGet/?token=8cFStx5H3x7fBfjrxrWZ&partnerID=134&type=4</a></td>
+						</tr>
+						<tr>
+							<td>Описание</td>
+							<td>Получить Заказы со статусом Готов к упаковке</td>
+						</tr>
+						<tr>
+							<td>Тип метода</td>
+							<td>GET</td>
+						</tr>
+						<tr>
+							<td>Пример ответа</td>
+							<td><a href="#AnsGetReadyToPack">Подробнее...</a></td>
+						</tr>
+						<tr>
+							<td>Тело запроса</td>
+							<td></td>
+						</tr>
+					</table>
+				</div>
+				<div class="card" id="GetReturns">
+					<div class="title">GetReturns</div>
+					<table class="card-wrap">
+						<tr>
+							<td>Ссылка</td>
+							<td><a href="http://45.9.72.56/test_ib/hs/orders/fGet/?token=8cFStx5H3x7fBfjrxrWZ&partnerID=134&type=5" target="_blank">http://45.9.72.56/test_ib/hs/orders/fGet/?token=8cFStx5H3x7fBfjrxrWZ&partnerID=134&type=5</a></td>
+						</tr>
+						<tr>
+							<td>Описание</td>
+							<td>Получить Заказы со статусом Начат Возврат</td>
+						</tr>
+						<tr>
+							<td>Тип метода</td>
+							<td>GET</td>
+						</tr>
+						<tr>
+							<td>Пример ответа</td>
+							<td><a href="#AnsGetReturns">Подробнее...</a></td>
+						</tr>
+						<tr>
+							<td>Тело запроса</td>
+							<td></td>
+						</tr>
+					</table>
+				</div>
+				<div class="card" id="GetStatus">
+					<div class="title">GetStatus</div>
+					<table class="card-wrap">
+						<tr>
+							<td>Ссылка</td>
+							<td><a href="http://45.9.72.56/test_ib/hs/orders/fPost/?token=8cFStx5H3x7fBfjrxrWZ&partnerID=134&type=3" target="_blank">http://45.9.72.56/test_ib/hs/orders/fPost/?token=8cFStx5H3x7fBfjrxrWZ&partnerID=134&type=3</a></td>
+						</tr>
+						<tr>
+							<td>Описание</td>
+							<td>Получить статус заказа</td>
+						</tr>
+						<tr>
+							<td>Тип метода</td>
+							<td>POST</td>
+						</tr>
+						<tr>
+							<td>Пример ответа</td>
+							<td><a href="#AnsGetStatus">Подробнее...</a></td>
+						</tr>
+						<tr>
+							<td>Тело запроса</td>
+							<td>
+							<pre><code class="language-json">
+							["5898957"]
+							</code></pre>
+							</td>
+						</tr>
+					</table>
+				</div>
+				<div class="card" id="Pack">
+					<div class="title">Pack</div>
+					<table class="card-wrap">
+						<tr>
+							<td>Ссылка</td>
+							<td><a href="http://45.9.72.56/test_ib/hs/orders/fPost/?token=8cFStx5H3x7fBfjrxrWZ&partnerID=134&type=9" target="_blank">http://45.9.72.56/test_ib/hs/orders/fPost/?token=8cFStx5H3x7fBfjrxrWZ&partnerID=134&type=9</a></td>
+						</tr>
+						<tr>
+							<td>Описание</td>
+							<td>Отправить информацию в какие коробки упакованы товары из заказа</td>
+						</tr>
+						<tr>
+							<td>Тип метода</td>
+							<td>POST</td>
+						</tr>
+						<tr>
+							<td>Пример ответа</td>
+							<td><a href="#AnsPack">Подробнее...</a></td>
+						</tr>
+						<tr>
+							<td>Тело запроса</td>
+							<td>
+							<pre><code class="language-json">
+							[{
+								"OrderId": "5898960",
+								"BoxId": "25"
+							}]
+							</code></pre>
+							</td>
+						</tr>
+					</table>
+				</div>
+				<div class="card" id="SetPrice">
+					<div class="title">SetPrice</div>
+					<table class="card-wrap">
+						<tr>
+							<td>Ссылка</td>
+							<td><a href="	http://45.9.72.56/test_ib/hs/stocks/fPost/?token=8cFStx5H3x7fBfjrxrWZ&partnerID=134&type=2" target="_blank">http://45.9.72.56/test_ib/hs/stocks/fPost/?token=8cFStx5H3x7fBfjrxrWZ&partnerID=134&type=2</a></td>
+						</tr>
+						<tr>
+							<td>Описание</td>
+							<td>Отправить информацию о новой цене товара</td>
+						</tr>
+						<tr>
+							<td>Тип метода</td>
+							<td>POST</td>
+						</tr>
+						<tr>
+							<td>Пример ответа</td>
+							<td><a href="#AnsSetPrice">Подробнее...</a></td>
+						</tr>
+						<tr>
+							<td>Тело запроса</td>
+							<td>
+							<pre><code class="language-json">
+							[{
+								"Barcode": "03383413",
+								"Price": "49820.00",
+								"Discount": "49820.00"
+							}]
+							</code></pre>
+							</td>
+						</tr>
+					</table>
+				</div>
+				<div class="card" id="SetStatus">
+					<div class="title">SetStatus</div>
+					<table class="card-wrap">
+						<tr>
+							<td>Ссылка</td>
+							<td><a href="	http://45.9.72.56/test_ib/hs/orders/fPost/?token=8cFStx5H3x7fBfjrxrWZ&partnerID=134&type=4" target="_blank">http://45.9.72.56/test_ib/hs/orders/fPost/?token=8cFStx5H3x7fBfjrxrWZ&partnerID=134&type=4</a></td>
+						</tr>
+						<tr>
+							<td>Описание</td>
+							<td>Отправить информацию о новом статусе заказа (не применяется для подтверждения заказа).<br><b>210</b> – Заказ передан в транспортную компанию.<br><b>400</b> – Заказ отменен (товары из заказа не найдены).</td>
+						</tr>
+						<tr>
+							<td>Тип метода</td>
+							<td>POST</td>
+						</tr>
+						<tr>
+							<td>Пример ответа</td>
+							<td><a href="#AnsSetStatus">Подробнее...</a></td>
+						</tr>
+						<tr>
+							<td>Тело запроса</td>
+							<td>
+							<pre><code class="language-json">
+							[{
+								"OrderId": "5898960",
+								"Status": "400"
+							}]
+							</code></pre>
+						</tr>
+					</table>
+				</div>
+				<div class="card" id="StockSync">
+					<div class="title">StockSync</div>
+					<table class="card-wrap">
+						<tr>
+							<td>Ссылка</td>
+							<td><a href="	http://45.9.72.56/test_ib/hs/stocks/fPost/?token=8cFStx5H3x7fBfjrxrWZ&partnerID=134&type=0" target="_blank">http://45.9.72.56/test_ib/hs/stocks/fPost/?token=8cFStx5H3x7fBfjrxrWZ&partnerID=134&type=0</a></td>
+						</tr>
+						<tr>
+							<td>Описание</td>
+							<td>Отправить информацию об остатках товаров</td>
+						</tr>
+						<tr>
+							<td>Тип метода</td>
+							<td>POST</td>
+						</tr>
+						<tr>
+							<td>Пример ответа</td>
+							<td><a href="#AnsStockSync">Подробнее...</a></td>
+						</tr>
+						<tr>
+							<td>Тело запроса</td>
+							<td>
+								<pre><code class="language-json">
+								[{
+									"Quantity": 1,
+									"Barcode": "3556666666"
+								}]
+								</code></pre>
+								<p>или</p>
+								<pre><code class="language-json">
+								[{
+									"Product": "Jacket",
+									"Quantity": 1,
+									"Barcode": "3556666666",
+									"Size": "45",
+									"Price": "1200.45",
+									"DesignerID": "Dfrgf456",
+									"SKU": "3556666666",
+									"Brand": "PRADA",
+									"Article": "56565473"
+								}]
+								<code><pre>
+							</td>
+						</tr>
+					</table>
+				</div>
+				<div class="big-title">Примеры ответов</div>
+				<div class="card" id="AnsAuth">
+					<div class="title">Authorization</div>
+					<div class="card-code code">
+						<pre><code class="language-json">
+						Соединение установлено. Неверно указан параметр type! КодОтвета=105
+						</code></pre>
+					</div>
+				</div>
+				<div class="card" id="AnsCheckGoods">
+					<div class="title">CheckGoods</div>
+					<div class="card-code code">
+						<pre class="line-numbers keep-initial-line-feed"><code class="language-json">
+						{
+							"result": [{
+									"Code": "190",
+									"Message": "Товары отправлены для ассоциации КодОтвета=190",
+									"Comment": ""
+								}],
+							"data": []
+						}
+						</code></pre>
+					</div>
+				</div>
+				<div class="card" id="AnsCheckReturn">
+					<div class="title">CheckReturn</div>
+					<div class="card-code code">
+						<pre class="line-numbers keep-initial-line-feed"><code class="language-json">
+						{
+							"result": [{
+								"Code": "355",
+								"Message": "Статусы возврата товара обработаны КодОтвета=355",
+								"Comment": ""
+							}],
+							"data": [{
+								"OrderId": "234455465",
+								"Status": "failure",
+								"Comment": "Не удалось найти заказ для подтверждения по указанному номеру! 234455465 КодОтвета=350"
+							}]
+						}
+						
+						// and
+						
+						{
+							"result": [{
+								"Code": "355",
+								"Message": "Статусы возврата товара обработаны КодОтвета=355",
+								"Comment": ""
+							}],
+							"data": [{
+								"OrderId": "108353540",
+								"Status": "Подтвердил возврат",
+								"Comment": "AcceptWithShippingCost"
+							}]
+						}
+						</code></pre>
+					</div>
+				</div>
+				<div class="card" id="AnsCheckStock">
+					<div class="title">CheckStock</div>
+					<div class="card-code code">
+						<pre class="line-numbers keep-initial-line-feed"><code class="language-json">
+						{
+							"result": [{
+								"Code": "290",
+								"Message": "Заказы, требующие обработки вызванным методом, не найдены. КодОтвета=290",
+								"Comment": ""
+							}],
+							"data": [{
+								"OrderId": "5898957",
+								"Status": "failure",
+								"Comment": "Не удалось найти заказ для подтверждения по указанному номеру! 5898957 КодОтвета=140"
+							}]
+						}
+						</code></pre>
+					</div>
+				</div>
+				<div class="card" id="AnsCheckStockByRows">
+					<div class="title">CheckStockByRows</div>
+					<div class="card-code code">
+						<pre class="line-numbers keep-initial-line-feed"><code class="language-json">
+						{
+							"result": [{
+								"Code": "290",
+								"Message": "Заказы, требующие обработки вызванным методом, не найдены. КодОтвета=290",
+								"Comment": ""
+							}],
+							"data": [{
+								"OrderId": "5898958",
+								"Status": "failure",
+								"Comment": "Заказ не найден"
+							}]
+						}
+						</code></pre>
+					</div>
+				</div>
+				<div class="card" id="AnsGetCanceled">
+					<div class="title">GetCanceled</div>
+					<div class="card-code code">
+						<pre class="line-numbers keep-initial-line-feed"><code class="language-json">
+						{
+							"result": [{
+								"Code": "213",
+								"Message": "Отмененные заказы были получены КодОтвета=213",
+								"Comment": ""
+							}],
+							"data": [{
+								"OrderNumber": "000000021",
+								"OrderId": "5898956",
+								"OrderCode": " ",
+								"PartnerID": "134",
+								"Customer": [{
+									"Name": "name lastname",
+									"Address1": "address",
+									"Address2": "",
+									"Country": "United States",
+									"Region": "Alabama",
+									"City": "city",
+									"Email": "testcustomer@testcustomer.com",
+									"Phone": "",
+									"ZipCode": "123456",
+									"ID": "000000001"
+								}],
+								"CreateDate": "13.09.2019 13:14:57",
+								"Status": "Заказ отменен",
+								"StatusId": "400",
+								"StatusSource": "Other Reason (Partner fault)",
+								"Lines": [{
+									"Line": "1",
+									"LineId": "",
+									"ItemID": "12547847",
+									"Barcode": "2200000030122",
+									"BarcodeFF": "2012547847213",
+									"Quantity": "1",
+									"Size": "48",
+									"Color": null,
+									"Price": "2000",
+									"SKU": null,
+									"Canceled": true,
+									"WhoCanceled": "Other Reason (Partner fault)"
+								}, {
+									"Line": "2",
+									"LineId": "",
+									"ItemID": "11901772",
+									"Barcode": "2200000030115",
+									"BarcodeFF": "",
+									"Quantity": "1",
+									"Size": "50",
+									"Color": null,
+									"Price": "10000",
+									"SKU": null,
+									"Canceled": true,
+									"WhoCanceled": "Other Reason (Partner fault)"
+								}],
+								"GUID": "da72459c-d60b-11e9-80df-a1e5aaf7f6f2"
+							}, {
+								"OrderNumber": "000000028",
+								"OrderId": "5898958",
+								"OrderCode": " ",
+								"PartnerID": "134",
+								"Customer": [{
+									"Name": "name lastname",
+									"Address1": "address",
+									"Address2": "",
+									"Country": "United States",
+									"Region": "Alabama",
+									"City": "city",
+									"Email": "testcustomer@testcustomer.com",
+									"Phone": "",
+									"ZipCode": "123456",
+									"ID": "000000001"
+								}],
+								"CreateDate": "13.09.2019 12:54:14",
+								"Status": "Заказ отменен",
+								"StatusId": "400",
+								"StatusSource": "Cancelled by Farfetch ",
+								"Lines": [{
+									"Line": "1",
+									"LineId": "",
+									"ItemID": "12547847",
+									"Barcode": "2200000030122",
+									"BarcodeFF": "2012547847213",
+									"Quantity": "1",
+									"Size": "48",
+									"Color": null,
+									"Price": "2000",
+									"SKU": null,
+									"Canceled": true,
+									"WhoCanceled": "Other Reason (Partner fault)"
+								}, {
+									"Line": "2",
+									"LineId": "",
+									"ItemID": "11901772",
+									"Barcode": "2200000030115",
+									"BarcodeFF": "",
+									"Quantity": "1",
+									"Size": "50",
+									"Color": null,
+									"Price": "10000",
+									"SKU": null,
+									"Canceled": true,
+									"WhoCanceled": "Other Reason (Partner fault)"
+								}],
+								"GUID": "fe8af955-da17-11e9-80df-a1e5aaf7f6f2"
+							}]
+						}
+						</code></pre>
+					</div>
+				</div>
+				<div class="card" id="AnsGetChangedOrders">
+					<div class="title">GetChangedOrders</div>
+					<div class="card-code code">
+						<pre class="line-numbers keep-initial-line-feed"><code class="language-json">
+						{
+							"result": [{
+								"Code": "215",
+								"Message": "Измененные заказы были получены КодОтвета=215",
+								"Comment": ""
+							}],
+							"data": [{
+								"OrderNumber": "000000022",
+								"OrderId": "666777",
+								"OrderCode": "2",
+								"PartnerID": "134",
+								"Customer": [{
+									"Name": "name lastname",
+									"Address1": "address",
+									"Address2": "",
+									"Country": "United States",
+									"Region": "Alabama",
+									"City": "city",
+									"Email": "testcustomer@testcustomer.com",
+									"Phone": "",
+									"ZipCode": "123456",
+									"ID": "000000001"
+								}],
+								"CreateDate": "17.09.2019 14:38:18",
+								"Status": "Готов к упаковке",
+								"StatusId": "150",
+								"StatusSource": "Other Reason (Partner fault)",
+								"Lines": [{
+									"Line": "1",
+									"LineId": "1000001",
+									"ItemID": "",
+									"Barcode": "2200000000040",
+									"BarcodeFF": "",
+									"Quantity": "2",
+									"Size": "",
+									"Color": null,
+									"Price": "200",
+									"SKU": "",
+									"Canceled": false,
+									"WhoCanceled": "Other Reason (Partner fault)"
+								}, {
+									"Line": "2",
+									"LineId": "1000002",
+									"ItemID": "",
+									"Barcode": "2200000000040",
+									"BarcodeFF": "",
+									"Quantity": "3",
+									"Size": "",
+									"Color": null,
+									"Price": "300",
+									"SKU": "",
+									"Canceled": true,
+									"WhoCanceled": "Other Reason (Partner fault)"
+								}],
+								"GUID": "803518ee-d916-11e9-80df-a1e5aaf7f6f2"
+							}]
+						}
+						</code></pre>
+					</div>
+				</div>
+				<div class="card" id="AnsGetClosed">
+					<div class="title">GetClosed</div>
+					<div class="card-code code">
+						<pre class="line-numbers keep-initial-line-feed"><code class="language-json">
+						{
+							"result": [{
+								"Code": "214",
+								"Message": "Закрытые заказы были получены КодОтвета=214",
+								"Comment": ""
+							}],
+							"data": [{
+								"OrderNumber": "000000009",
+								"OrderId": "546812",
+								"OrderCode": "",
+								"PartnerID": "134",
+								"Customer": [{
+									"Name": "name lastname",
+									"Address1": "address",
+									"Address2": "",
+									"Country": "United States",
+									"Region": "Alabama",
+									"City": "city",
+									"Email": "testcustomer@testcustomer.com",
+									"Phone": "",
+									"ZipCode": "123456",
+									"ID": "000000001"
+								}],
+								"CreateDate": "27.08.2019 15:25:48",
+								"Status": "Закрыт",
+								"StatusId": "500",
+								"StatusSource": "",
+								"Lines": [{
+									"Line": "1",
+									"LineId": "",
+									"ItemID": "12547847",
+									"Barcode": "2200000030122",
+									"BarcodeFF": "",
+									"Quantity": "1",
+									"Size": "48",
+									"Color": null,
+									"Price": "2000",
+									"SKU": null,
+									"Canceled": false,
+									"WhoCanceled": ""
+								}],
+								"GUID": "cc6f7fca-c8c5-11e9-80df-a1e5aaf7f6f2"
+							}, {
+								"OrderNumber": "000000010",
+								"OrderId": "546817",
+								"OrderCode": "",
+								"PartnerID": "134",
+								"Customer": [{
+									"Name": "name lastname",
+									"Address1": "address",
+									"Address2": "",
+									"Country": "United States",
+									"Region": "Alabama",
+									"City": "city",
+									"Email": "testcustomer@testcustomer.com",
+									"Phone": "",
+									"ZipCode": "123456",
+									"ID": "000000001"
+								}],
+								"CreateDate": "27.08.2019 15:25:48",
+								"Status": "Закрыт",
+								"StatusId": "500",
+								"StatusSource": "Other Reason (Partner fault)",
+								"Lines": [{
+									"Line": "1",
+									"LineId": "1",
+									"ItemID": "12547847",
+									"Barcode": "2200000030122",
+									"BarcodeFF": "2012547847213",
+									"Quantity": "1",
+									"Size": "48",
+									"Color": null,
+									"Price": "2000",
+									"SKU": null,
+									"Canceled": false,
+									"WhoCanceled": ""
+								}, {
+									"Line": "2",
+									"LineId": "2",
+									"ItemID": "",
+									"Barcode": "2200000030122",
+									"BarcodeFF": "2012547847213",
+									"Quantity": "1",
+									"Size": "48",
+									"Color": null,
+									"Price": "2000",
+									"SKU": null,
+									"Canceled": false,
+									"WhoCanceled": ""
+								}],
+								"GUID": "a43ec889-c8c6-11e9-80df-a1e5aaf7f6f2"
+							}, {
+								"OrderNumber": "000000013",
+								"OrderId": "234455465",
+								"OrderCode": "",
+								"PartnerID": "134",
+								"Customer": [{
+									"Name": "name lastname",
+									"Address1": "address",
+									"Address2": "",
+									"Country": "United States",
+									"Region": "Alabama",
+									"City": "city",
+									"Email": "testcustomer@testcustomer.com",
+									"Phone": "",
+									"ZipCode": "123456",
+									"ID": "000000001"
+								}],
+								"CreateDate": "28.08.2019 0:00:00",
+								"Status": "Закрыт",
+								"StatusId": "500",
+								"StatusSource": "",
+								"Lines": [{
+									"Line": "1",
+									"LineId": "",
+									"ItemID": "12562350",
+									"Barcode": "2600000875288",
+									"BarcodeFF": "2012562350231",
+									"Quantity": "1",
+									"Size": "5",
+									"Color": null,
+									"Price": "1000",
+									"SKU": null,
+									"Canceled": false,
+									"WhoCanceled": ""
+								}],
+								"GUID": "c19d9a6c-c981-11e9-80df-a1e5aaf7f6f2"
+							}]
+						}
+						</code></pre>
+					</div>
+				</div>
+				<div class="card" id="AnsGetDocs">
+					<div class="title">GetDocs</div>
+					<div class="card-code code">
+						<pre class="line-numbers keep-initial-line-feed"><code class="language-json">
+						{
+							"result": [{
+								"Code": "330",
+								"Message": "Ссылки на транспортные документы, если они были - отданы КодОтвета=330",
+								"Comment": ""
+							}],
+							"data": [{
+								"OrderId": "666777",
+								"Status": "Готов к упаковке",
+								"StatusId": "150",
+								"Comment": "Заказ еще не был упакован",
+								"Link1": null,
+								"Link2": null,
+								"Link3": null
+							}]
+						}
+						</code></pre>
+					</div>
+				</div>
+				<div class="card" id="AnsGetGoods">
+					<div class="title">GetGoods</div>
+					<div class="card-code code">
+						<pre class="line-numbers keep-initial-line-feed"><code class="language-json">
+						{
+							"result": [{
+								"Code": "320",
+								"Message": "Ассоциированные товары партнера были получены КодОтвета=320",
+								"Comment": ""
+							}],
+							"data": [{
+								"Item": "GUCCI 386750A38D01078 1078 NERO not available",
+								"ItemID": "12562350",
+								"Barcode": "2600000875288",
+								"BarcodeFF": "2012562350231",
+								"DesignerId": "386750A38D",
+								"SKU": "1152224",
+								"Size": "5",
+								"ProductLink": ""
+							}, {
+								"Item": "GUCCI 386750A38D09072 9072 BIANCO ",
+								"ItemID": "12156614",
+								"Barcode": "2600000875318",
+								"BarcodeFF": "2012156614268",
+								"DesignerId": "386750A38D",
+								"SKU": "1152227",
+								"Size": "6.5",
+								"ProductLink": ""
+							}, {
+								"Item": "quilted ankle boots",
+								"ItemID": "12487834",
+								"Barcode": "234234234234234",
+								"BarcodeFF": "",
+								"DesignerId": "",
+								"SKU": "",
+								"Size": "35",
+								"ProductLink": ""
+							}, {
+								"Item": "Куртка 1",
+								"ItemID": "",
+								"Barcode": "2200000000040",
+								"BarcodeFF": "",
+								"DesignerId": "",
+								"SKU": "",
+								"Size": "",
+								"ProductLink": ""
+							}]
+						}
+						</code></pre>
+					</div>
+				</div>
+				<div class="card" id="AnsGetNewOrders">
+					<div class="title">GetNewOrders</div>
+					<div class="card-code code">
+						<pre class="line-numbers keep-initial-line-feed"><code class="language-json">
+						{
+							"result": [{
+								"Code": "210",
+								"Message": "Новые заказы были получены КодОтвета=210",
+								"Comment": ""
+							}],
+							"data": [{
+								"OrderNumber": "000000036",
+								"OrderId": "15318001",
+								"OrderCode": "8VA69N",
+								"PartnerID": "134",
+								"Customer": [{
+									"Name": "Customer Farfetch",
+									"Address1": "10 Downing Street",
+									"Address2": "",
+									"Country": "United Kingdom",
+									"Region": "London",
+									"City": "London",
+									"Email": "customer@farfetch.com",
+									"Phone": "",
+									"ZipCode": "W5 5YZ",
+									"ID": "000000002"
+								}],
+								"CreateDate": "20.09.2019 18:19:03",
+								"Status": "Новый заказ",
+								"StatusId": "105",
+								"StatusSource": "",
+								"Lines": [{
+									"Line": "1",
+									"LineId": "8514215",
+									"ItemID": "12487834",
+									"Barcode": "234234234234234",
+									"barcodeFF": "",
+									"Quantity": "1",
+									"Size": "35",
+									"Color": null,
+									"Price": "518,8",
+									"SKU": null,
+									"Canceled": false,
+									"WhoCanceled": ""
+								}],
+								"GUID": "ff32210b-dc5f-11e9-80df-a1e5aaf7f6f2"
+							}]
+						}
+						</code></pre>
+					</div>
+				</div>
+				<div class="card" id="AnsGetOrder">
+					<div class="title">GetOrder</div>
+					<div class="card-code code">
+						<pre class="line-numbers keep-initial-line-feed"><code class="language-json">
+						{
+							"result": [{
+								"Code": "365",
+								"Message": "Информация по заказам была получена КодОтвета=365",
+								"Comment": ""
+							}],
+							"data": [{
+								"OrderNumber": "000000022",
+								"OrderId": "666777",
+								"OrderCode": "2",
+								"PartnerID": "134",
+								"Customer": [{
+									"Name": "name lastname",
+									"Address1": "address",
+									"Address2": "",
+									"Country": "United States",
+									"Region": "Alabama",
+									"City": "city",
+									"Email": "testcustomer@testcustomer.com",
+									"Phone": "",
+									"ZipCode": "123456",
+									"ID": "000000001"
+								}],
+								"CreateDate": "17.09.2019 14:38:18",
+								"Status": "Готов к упаковке",
+								"StatusId": "150",
+								"StatusSource": "Other Reason (Partner fault)",
+								"Lines": [{
+									"Line": "1",
+									"LineId": "1000001",
+									"ItemID": "",
+									"Barcode": "2200000000040",
+									"barcodeFF": "",
+									"Quantity": "2",
+									"Size": "",
+									"Color": null,
+									"Price": "200",
+									"SKU": null,
+									"Canceled": false,
+									"WhoCanceled": "Other Reason (Partner fault)"
+								}, {
+									"Line": "2",
+									"LineId": "1000002",
+									"ItemID": "",
+									"Barcode": "2200000000040",
+									"barcodeFF": "",
+									"Quantity": "3",
+									"Size": "",
+									"Color": null,
+									"Price": "300",
+									"SKU": null,
+									"Canceled": true,
+									"WhoCanceled": "Other Reason (Partner fault)"
+								}],
+								"GUID": "803518ee-d916-11e9-80df-a1e5aaf7f6f2"
+							}]
+						}
+						</code></pre>
+					</div>
+				</div>
+				<div class="card" id="AnsGetPacks">
+					<div class="title">GetPacks</div>
+					<div class="card-code code">
+						<pre class="line-numbers keep-initial-line-feed"><code class="language-json">
+						{
+							"result": [{
+								"Code": "210",
+								"Message": "Упаковки были получены КодОтвета=375",
+								"Comment": ""
+							}],
+							"data": [{
+								"Description": "7 - Large Clothing (55x45x13)",
+								"Id": "25"
+							}, {
+								"Description": "3 - Shoes (36x23x14)",
+								"Id": "24"
+							}]
+						}
+						</code></pre>
+					</div>
+				</div>
+				<div class="card" id="AnsGetPartnerStock">
+					<div class="title">GetPartnerStock</div>
+					<div class="card-code code">
+						<pre class="line-numbers keep-initial-line-feed"><code class="language-json">
+						{
+							"result": [{
+								"Code": "265",
+								"Message": "Нет остатков в базе КодОтвета=265",
+								"Comment": ""
+							}],
+							"data": []
+						}
+						
+						// and
+						
+						{
+							"result": [{
+								"Code": "260",
+								"Message": "Остатки партнера были получены КодОтвета=260",
+								"Comment": ""
+							}],
+							"data": [{
+								"Item": "GUCCI 386750A38D01078 1078 NERO not available",
+								"ItemID": "12562350",
+								"Article": "",
+								"Size": null,
+								"Barcode": "2600000875288",
+								"Quantity": 1,
+								"SKU": null
+							}, {
+								"Item": "GUCCI 386750A38D09072 9072 BIANCO ",
+								"ItemID": "12156614",
+								"Article": "",
+								"Size": null,
+								"Barcode": "2600000875318",
+								"Quantity": 1,
+								"SKU": null
+							}]
+						}
+						</code></pre>
+					</div>
+				</div>
+				<div class="card" id="AnsGetReadyToPack">
+					<div class="title">GetReadyToPack</div>
+					<div class="card-code code">
+						<pre class="line-numbers keep-initial-line-feed"><code class="language-json">
+						{
+							"result": [{
+								"Code": "211",
+								"Message": "Готовые к упаковке заказы были получены КодОтвета=211",
+								"Comment": ""
+							}],
+							"data": [{
+								"OrderNumber": "000000044",
+								"OrderId": "108353540",
+								"OrderCode": "TL2Q6V",
+								"PartnerID": "134",
+								"Customer": [{
+									"Name": "Elena Kupriyanova",
+									"Address1": "Gangutskaya",
+									"Address2": "d.1",
+									"Country": "Russian Federation",
+									"Region": "",
+									"City": "Saint-Petersburg",
+									"Email": "794cfe346794a4d93290b4040e5b11b4e1132f59@ff.com",
+									"Phone": "",
+									"ZipCode": "191028",
+									"ID": "000000003"
+								}],
+								"CreateDate": "17.09.2019 8:36:55",
+								"Status": "Готов к упаковке",
+								"StatusId": "150",
+								"StatusSource": "",
+								"Lines": [{
+									"Line": "1",
+									"LineId": "",
+									"ItemID": "",
+									"Barcode": "",
+									"BarcodeFF": "",
+									"Quantity": "1",
+									"Size": "",
+									"Color": null,
+									"Price": "380",
+									"SKU": null,
+									"Canceled": false,
+									"WhoCanceled": ""
+								}],
+								"GUID": "44a7220c-e020-11e9-80df-a1e5aaf7f6f2"
+							}]
+						}
+						</code></pre>
+					</div>
+				</div>
+				<div class="card" id="AnsGetReturns">
+					<div class="title">GetReturns</div>
+					<div class="card-code code">
+						<pre class="line-numbers keep-initial-line-feed"><code class="language-json">
+						{
+							"result": [{
+								"Code": "212",
+								"Message": "Заказы со статусом Начат возврат получены КодОтвета=212",
+								"Comment": ""
+							}],
+							"data": [{
+								"OrderNumber": "000000039",
+								"OrderId": "1531800",
+								"OrderCode": "8VA69N",
+								"PartnerID": "134",
+								"Customer": [{
+									"Name": "Customer Farfetch",
+									"Address1": "10 Downing Street",
+									"Address2": "",
+									"Country": "United Kingdom",
+									"Region": "London",
+									"City": "London",
+									"Email": "customer@farfetch.com",
+									"Phone": "",
+									"ZipCode": "W5 5YZ",
+									"ID": "000000002"
+								}],
+								"CreateDate": "20.09.2019 18:19:03",
+								"Status": "Начат возврат",
+								"StatusId": "300",
+								"StatusSource": "",
+								"Lines": [{
+									"Line": "1",
+									"LineId": "8514215",
+									"ItemID": "12487834",
+									"Barcode": "234234234234234",
+									"BarcodeFF": "",
+									"Quantity": "1",
+									"Size": "35",
+									"Color": null,
+									"Price": "518,8",
+									"SKU": null,
+									"Canceled": false,
+									"WhoCanceled": ""
+								}],
+								"GUID": "354b7e45-dec3-11e9-80df-a1e5aaf7f6f2"
+							}]
+						}
+						</code></pre>
+					</div>
+				</div>
+				<div class="card" id="AnsGetStatus">
+					<div class="title">GetStatus</div>
+					<div class="card-code code">
+						<pre class="line-numbers keep-initial-line-feed"><code class="language-json">
+						{
+							"result": [{
+								"Code": "230",
+								"Message": "Статус заказа был отдан КодОтвета=230",
+								"Comment": ""
+							}],
+							"data": [{
+								"OrderId": "5898958",
+								"Status": "Заказ отменен",
+								"StatusId": "400",
+								"Comment": "Cancelled by Farfetch "
+							}, {
+								"OrderId": "5898959",
+								"Status": "Упакован",
+								"StatusId": "200",
+								"Comment": ""
+							}, {
+								"OrderId": "5898960",
+								"Status": "Упакован",
+								"StatusId": "200",
+								"Comment": ""
+							}]
+						}
+						</code></pre>
+					</div>
+				</div>
+				<div class="card" id="AnsPack">
+					<div class="title">Pack</div>
+					<div class="card-code code">
+						<pre class="line-numbers keep-initial-line-feed"><code class="language-json">
+						{
+							"result": [{
+								"Code": "290",
+								"Message": "Заказы, требующие обработки вызванным методом, не найдены. КодОтвета=290",
+								"Comment": ""
+							}],
+							"data": [{
+								"OrderId": "5898960",
+								"Packed": false,
+								"Items": null,
+								"Comment": "Заказ не найден"
+							}]
+						}
+						</code></pre>
+					</div>
+				</div>
+				<div class="card" id="AnsSetPrice">
+					<div class="title">SetPrice</div>
+					<div class="card-code code">
+						<pre class="line-numbers keep-initial-line-feed"><code class="language-json">
+						{
+							"result": [{
+								"Code": "445",
+								"Message": "Приняты данные для изменения цен КодОтвета=445",
+								"Comment": ""
+							}],
+							"data": [{
+								"Barcode": "234234234234234",
+								"Status": "success",
+								"Price": 49820,
+								"OldPrice": 0,
+								"Discount": 49820,
+								"OldDiscount": 0
+							}]
+						}
+						
+						// and
+						
+						{
+							"result": [{
+								"Code": "445",
+								"Message": "Приняты данные для изменения цен КодОтвета=445",
+								"Comment": ""
+							}],
+							"data": [{
+								"Barcode": "2342342342342343",
+								"Status": "failure",
+								"Message": "Не найден товар в базе по штрихкоду"
+							}]
+						}
+						</code></pre>
+					</div>
+				</div>
+				<div class="card" id="AnsSetStatus">
+					<div class="title">SetStatus</div>
+					<div class="card-code code">
+						<pre class="line-numbers keep-initial-line-feed"><code class="language-json">
+						{
+							"data": [{
+								"Code": "138",
+								"Message": "Нельзя изменить статус упакованного заказа КодОтвета=138",
+								"Comment": ""
+							}, {
+								"OrderId": "5898959",
+								"Status": "Упакован",
+								"Comment": "Нельзя изменить статус упакованного заказа! КодОтвета=138"
+							}]
+						}
+						
+						// and
+						
+						{
+							"data": [{
+								"Code": "240",
+								"Message": "Изменен статус заказа КодОтвета=240",
+								"Comment": ""
+							}, {
+								"OrderId": "5898959",
+								"Status": "Передан в транспортную компанию",
+								"Comment": "29.09.2019 1:27:50 КодОтвета=240"
+							}]
+						}
+						</code></pre>
+					</div>
+				</div>
+				<div class="card" id="AnsStockSync">
+					<div class="title">StockSync</div>
+					<div class="card-code code">
+						<pre class="line-numbers keep-initial-line-feed"><code class="language-json">
+						{
+							"data": [{
+								"Code": "170",
+								"Message": "Обработаны остатки партнера КодОтвета=170",
+								"Comment": ""
+							}, {
+								"Product": "",
+								"Quantity": 1,
+								"Barcode": "3556666666",
+								"Size": "",
+								"Price": "",
+								"DesignerID": "",
+								"НеАссоциирован": false,
+								"SKU": "",
+								"Brand": "",
+								"Article": "",
+								"Code": "180",
+								"Status": "Not found",
+								"Comment": "Товар не ассоциирован КодОтвета=180. Остатки по товару не загружены."
+							}],
+							"Uploaded": 0,
+							"Comment": "Товар не ассоциирован КодОтвета=180"
+						}
+						
+						// and
+						
+						{
+							"data": [{
+								"Code": "170",
+								"Message": "Записаны остатки партнера КодОтвета=170",
+								"Comment": ""
+							}],
+							"Uploaded": 2,
+							"Comment": null
+						}
+						</code></pre>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+ </body>
+</html>
