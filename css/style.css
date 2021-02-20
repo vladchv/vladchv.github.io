@@ -10,7 +10,8 @@ header h1{width:320px;display:flex;height:100%;align-items:center;font-size:20px
 header p{font-size:14px;padding-left:20px;margin:0;}
 .row .container{flex-wrap:wrap;padding-top:80px;position:relative;}
 .sidebar-wrap{flex-direction:column;max-width:320px;}
-.sidebar{flex-direction:column;max-width:320px;position:fixed;left:calc((100vw - 1185px) / 2);top:0;padding:80px 0 40px 0;height:100%;overflow-y:scroll;transform: scaleX(-1);border-left:1px solid #e8e8e8;}
+.sidebar{flex-direction:column;max-width:320px;position:fixed;left:calc((100vw - 1185px) / 2);top:0;padding:80px 0 40px 0;height:100%;overflow-y:scroll;transform: scaleX(-1);border-left:1px solid #e8e8e8;scrollbar-color:#1da1f2 #e8e8e8;scrollbar-width:thin;
+scrollbar-base-color:#1da1f2;scrollbar-face-color:#1da1f2;scrollbar-3dlight-color:#1da1f2;scrollbar-highlight-color:#1da1f2;scrollbar-track-color:#e8e8e8;scrollbar-arrow-color:#e8e8e8;scrollbar-shadow-color:#1da1f2;scrollbar-dark-shadow-color:#000;}
 .widget{flex-direction:column;transform: scaleX(-1);}
 .widget h2{display:flex;margin:0;font-size:14px;padding:15px 20px 15px 23px;border-bottom:1px solid #e8e8e8;background:#fff;color:#333;position:relative;cursor:pointer;}
 .widget h2:after{content:'';border:solid #333;border-width:0 1px 1px 0;display:block;padding:3px;transform:rotate(45deg);margin-bottom:3px;transition:.25s;position:absolute;right:20px;top:50%;margin-top:-7px;}
