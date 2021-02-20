@@ -32,12 +32,18 @@ jQuery(function($){
 	$(window).scroll(function(){
 		var fromTop = $(this).scrollTop() + 100;
 		var cur = scrollItems.map(function(){
-			if ($(this).offset().top < fromTop)
-			return this;
+			if ($(this).offset().top < fromTop){
+				return this;
+			}
 		});
 		cur = cur[cur.length-1];
 		var id = cur && cur.length ? cur[0].id : "";
 		menuItems.parent().removeClass("active").end().filter("[href='#"+id+"']").parent().addClass("active");
+		var hT = $('#big-title').offset().top,
+		wS = $(this).scrollTop();
+		if (wS > hT){
+			menuItems.parent().removeClass("active");
+		}
 	});
 	$('a[href^="#"]').click(function (event) {
 		event.preventDefault();
