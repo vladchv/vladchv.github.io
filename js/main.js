@@ -18,6 +18,31 @@ jQuery(function($){
 			$('header').removeClass('min');
 		}
 	});
+	
+	//Modals
+    $('.open-modal').click(function (e) {
+        e.preventDefault();
+        $(".modal").animate({
+            opacity: 0,
+            top: "45%"
+        },200);
+        var current_modal = $(this).data('modal');
+        $(".modal-overlay").fadeIn(10,function () {
+            $('#' + current_modal).css("display","flex").animate({
+                opacity: 1,
+                top: "50%"
+            },200);
+        });
+    });
+    $(".modal-close, .modal-overlay, .modal-close-button").click(function () {
+        $(".modal").animate({
+            opacity: 0,
+            top: "45%"
+        },200,function () {
+            $(this).css("display","none");
+            $(".modal-overlay").fadeOut(400);
+        });
+    });
 
     //Faq
     $('.faq .item:first-child .desc').slideDown('fast');
