@@ -385,6 +385,7 @@ header.min{height:80px;}
 .show .btn-menu .bar:after{top:0;-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}
 .mobile-menu{position:fixed;width:280px;height:100%;top:0;right:-280px;background:#E30613;;z-index:8;transition:.25s;padding:100px 15px 30px 15px;text-align:center;align-items:center;}
 .show .mobile-menu{right:0;box-shadow:0 0 21px rgb(0 0 0 / 10%);}
+header .menu{font-size:0px;}
 .mobile-menu a{font-size:18px;margin:17px 0;font-family:NeutraDisplay;color:#fff;}
 .mobile-menu a:hover{color:#E1BC53;}
 .logo{max-width:112px;min-width:112px;height:62px;margin:0 30px -13px 30px;}
