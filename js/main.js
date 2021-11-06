@@ -154,6 +154,19 @@ jQuery(function($){
 			$(this).appendTo('.mobile-menu');
 		});
 	}
+	$(window).on('resize', function(){
+		var win = $(this);
+		if (win.width() > 1000) {
+			$('.menu').each(function(){
+				$(this).appendTo('header .container');
+			});
+		}
+		if (win.width() < 1001) {
+			$('.menu').each(function(){
+				$(this).appendTo('.mobile-menu');
+			});
+		}
+	});
 	
 	//Fixes Mob
 	if ($(window).width() < 641) {

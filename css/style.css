@@ -27,6 +27,9 @@ header .container{height:100%;flex-direction:row;justify-content:center;align-it
 .logo:before{content:'';display:block;width:197px;height:27px;background:url(../img/elements/before-logo.png) 50% 50% no-repeat;background-size:contain;position:absolute;bottom:-5px;left:50%;transform:translateX(-50%);z-index:1;}
 .logo:after{content:'';display:block;width:350px;height:27px;background:url(../img/elements/after-logo.png) 50% 50% no-repeat;background-size:contain;position:absolute;bottom:-5px;left:50%;transform:translateX(-50%);z-index:2;}
 header .menu{flex-direction:row;width:100%;justify-content:space-between;font-family:NeutraDisplay;font-size:14px;text-decoration:uppercase;font-weight:400;padding:0 0 18px 0;}
+header .menu.left{order:1;}
+header .logo{order:2;}
+header .menu.right{order:3;}
 header .menu a{color:#fff;}
 header .menu a:hover,header .menu a.current{color:#E1BC53;}
 footer{padding:20px 0 40px 0;background:#DA291C;margin:auto 0 0 0;color:#fff;font-size:15px;text-align:center;justify-content:center;position:relative;z-index:5;}
