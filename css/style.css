@@ -388,7 +388,7 @@ header.min{height:80px;}
 header .menu{font-size:0px;}
 .mobile-menu a{font-size:18px;margin:17px 0;font-family:NeutraDisplay;color:#fff;}
 .mobile-menu a:hover{color:#E1BC53;}
-.logo{max-width:112px;min-width:112px;height:62px;margin:0 30px -13px 30px;}
+.logo{max-width:112px;min-width:112px;height:62px;margin:0 30px -14px 30px;}
 .logo:after{width:238px;height:19px;background:url(../img/elements/after-logo-mob.png) 50% 50% no-repeat;background-size:contain;}
 .logo:before{width:126px;height:19px;background:url(../img/elements/before-logo-mob.png) 50% 50% no-repeat;background-size:contain;}
 .container{max-width:500px;}
