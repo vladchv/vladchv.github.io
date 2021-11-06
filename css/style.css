@@ -454,7 +454,8 @@ section.index-banner .buttons a:nth-child(2){margin:20px auto;}
 section.index-banner .button.green{font-size:14px;padding:0;width:auto;}
 section.index-banner .button.green svg{width:23px;margin:0 5px 0 0;font-weight:400;}
 .section-desc{font-size:18px;}
-.section-title{font-size:22px;}
+.section-title,.promo-wrap .title{font-size:22px;}
+section.prizes{padding-bottom:0px;}
 section.prizes .container:before{width:62px;height:46px;background:url(../img/elements/prizes-right.png) 50% 50% no-repeat;background-size:contain;top:-40px;right:84%;z-index:2;}
 section.prizes .container:after{width:85px;height:59px;background:url(../img/elements/prizes-left.png) 50% 50% no-repeat;background-size:contain;bottom:-30px;right:10px;z-index:2;transform:scaleX(-1);}
 .prizes-wrap .image{height:110px;justify-content:center;align-items:center;}
@@ -470,4 +471,19 @@ section.prizes .container:after{width:85px;height:59px;background:url(../img/ele
 .modal-prize-wrap p{order:3;text-align:center;font-weight:500;}
 .prizes-wrap .modal .modal-close{top:calc(100% - 58px);right:50%;margin-right:-19px;}
 .modal-prize-wrap .text{padding:0 0 35px 0;}
+.promo-wrap .item:nth-child(2n+2) .image{width:100%;align-items:center;}
+.promo-wrap .item .image{align-items:center;}
+.promo-wrap .item .image img{max-height:215px;object-fit:contain;}
+.promo-wrap .title{padding:0 0 5px 0;}
+.promo-wrap p{font-size:16px;}
+.promo-wrap .item{position:relative;}
+.promo-wrap .item:not(:last-child){padding-bottom:40px;}
+section.promo .container:after{display:none;}
+.promo-wrap .item:nth-child(1)::after{content:'';display:block;width:100px;height:134px;background:url(../img/elements/promo.png) 50% 50% no-repeat;background-size:contain;position:absolute;bottom:-40px;right:-15px;z-index:2;}
+.promo-wrap .item:nth-child(2)::before{content:'';display:block;width:110px;height:70px;background:url(../img/elements/steps.png) 50% 50% no-repeat;background-size:contain;position:absolute;top:-5px;left:-15px;z-index:2;}
+section.steps{padding:40px 0 40px 0;}
+section.steps .container:before{display:none;}
+.steps-wrap{padding:0;}
+section.steps .section-title{padding:0 0 20px 0;}
+.steps-wrap .step span{margin:0;line-height:1;}
 }
