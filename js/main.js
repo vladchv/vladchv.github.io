@@ -154,5 +154,14 @@ jQuery(function($){
 			$(this).appendTo('.mobile-menu');
 		});
 	}
+	
+	//Fixes
+	if ($(window).width() < 641) {
+		$('.modal-prize-wrap').each(function(){
+			var img = $(this).find('.image');
+			var txt = $(this).find('.text');
+			img.appendTo(txt);
+		});
+	}
 
 });

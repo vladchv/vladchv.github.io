@@ -373,6 +373,7 @@ section.index-banner{padding:95px 0 760px 0;}
 
 /*Mobile*/
 @media screen and (max-width:1000px){
+a,.btn-menu{-webkit-tap-highlight-color:transparent;}
 header{background:radial-gradient(108.88% 203.65% at 53.42% 52.26%, #E30613 0%, #E30613 21.05%, #8D1003 76.22%, #8D1003 100%);height:80px;border-bottom:4px solid #F9E071;}
 header.min{height:80px;}
 .btn-menu{display:block;border:0;width:33px;height:26px;background-color:transparent;cursor:pointer;z-index:99999;position:fixed;right:20px;top:24px;z-index:999;transition:.25s}
@@ -441,4 +442,32 @@ form.registration .radio-large{padding:0;}
 .lk .prizes-wrap .item .title br{display:none;}
 .lk .prizes-wrap .item .multiplier{order:3;width:auto;margin-top:20px;}
 .lk .prizes-wrap .item .button{order:4;margin-top:20px;}
+}
+
+@media screen and (max-width:640px){
+section.index-banner{padding:55px 0 210px 0;background:url(../img/bg/index-banner-mob.jpg) 50% 100% no-repeat;background-size:cover;}
+section.index-banner .desc{font-size:14px;}
+section.index-banner .buttons{margin:30px auto 0 auto;}
+section.index-banner .button{height:33px;font-size:12px;border-radius:3px;min-width:160px;padding:0 10px;}
+section.index-banner .button svg{width:19px;}
+section.index-banner .buttons a:nth-child(2){margin:20px auto;}
+section.index-banner .button.green{font-size:14px;padding:0;width:auto;}
+section.index-banner .button.green svg{width:23px;margin:0 5px 0 0;font-weight:400;}
+.section-desc{font-size:18px;}
+.section-title{font-size:22px;}
+section.prizes .container:before{width:62px;height:46px;background:url(../img/elements/prizes-right.png) 50% 50% no-repeat;background-size:contain;top:-40px;right:84%;z-index:2;}
+section.prizes .container:after{width:85px;height:59px;background:url(../img/elements/prizes-left.png) 50% 50% no-repeat;background-size:contain;bottom:-30px;right:10px;z-index:2;transform:scaleX(-1);}
+.prizes-wrap .image{height:110px;justify-content:center;align-items:center;}
+.prizes-wrap .image img{max-height:100%;object-fit:contain;}
+.prizes-wrap .multiplier{margin:10px auto 10px auto;font-size:17px;line-height:20px;background-size:43px;padding:0 50px 0 0;}
+.prizes-wrap .title{font-size:16px;padding:0 0 15px 0;}
+.prizes-wrap .multiplier span{font-size:33px;}
+.prizes-wrap .item:not(:last-child){margin-bottom:50px;}
+.prizes-wrap .modal{z-index:99;padding:40px 25px;}
+.modal-prize-wrap{flex-direction:column;}
+.prizes-wrap .modal .title{order:1;font-size:22px;padding:0 0 35px 0;text-align:center;}
+.prizes-wrap .modal .image{order:2;margin:0 auto 30px auto;}
+.modal-prize-wrap p{order:3;text-align:center;font-weight:500;}
+.prizes-wrap .modal .modal-close{top:calc(100% - 58px);right:50%;margin-right:-19px;}
+.modal-prize-wrap .text{padding:0 0 35px 0;}
 }
