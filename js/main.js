@@ -155,13 +155,34 @@ jQuery(function($){
 		});
 	}
 	
-	//Fixes
+	//Fixes Mob
 	if ($(window).width() < 641) {
+		
+		//prizes modal
 		$('.modal-prize-wrap').each(function(){
 			var img = $(this).find('.image');
 			var txt = $(this).find('.text');
 			img.appendTo(txt);
 		});
+		
+		//winners
+		$('.winners-body').ready(function () {
+            max = 6;
+            i = 0;
+            $('.winners-body .row').each(function() {
+                i += 1;
+                if(i > max) {
+                    $(this).appendTo('.winners-body .winners-mobile');
+                }
+            })
+        });
+		$('.open-winners').click(function(){
+			$('.winners-body .winners-mobile').slideToggle('fast');
+			
+			var text = $(this).text();
+			$(this).text( text == "Все победители" ? "Скрыть" : "Все победители");
+		});
+		
 	}
 
 });
