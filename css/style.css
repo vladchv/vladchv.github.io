@@ -556,6 +556,7 @@ form.login .fields:before,form.forgot .fields:before{content:'';position:absolut
 .lk.checks .inner{padding:5px 0 0 0;}
 .c-checks .row.title{display:none;}
 .c-checks{padding:15px 0 0 0;}
-.lk .prizes-wrap{padding:15px 10px 0 10px;}
+.lk .prizes-wrap{padding:15px 0 0 0;margin:0;}
 .inner-page.lk .container:after{display:none;}
+.lk .prizes-wrap .item{background:rgba(255, 242, 227, 0.58);border:1px solid #CC9957;margin-top:0px;margin-bottom:30px;}
 }
