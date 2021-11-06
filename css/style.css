@@ -468,7 +468,7 @@ section.prizes .container:before{width:62px;height:46px;background:url(../img/el
 section.prizes .container:after{width:85px;height:59px;background:url(../img/elements/prizes-left.png) 50% 50% no-repeat;background-size:contain;bottom:-30px;right:10px;z-index:2;transform:scaleX(-1);}
 .prizes-wrap .image{height:110px;justify-content:center;align-items:center;}
 .prizes-wrap .image img{max-height:100%;object-fit:contain;}
-.prizes-wrap .multiplier{margin:10px auto 10px auto;font-size:17px;line-height:22px;background-size:43px;padding:4px 50px 0 0;}
+.prizes-wrap .multiplier{margin:10px auto 10px auto;font-size:17px;line-height:22px;background-size:43px;padding:5px 50px 0 0;}
 .prizes-wrap .title{font-size:16px;padding:0 0 15px 0;}
 .prizes-wrap .multiplier span{font-size:33px;line-height:33px;margin-bottom:-2px}
 .prizes-wrap .item:not(:last-child){margin-bottom:50px;}
