@@ -468,9 +468,9 @@ section.prizes .container:before{width:62px;height:46px;background:url(../img/el
 section.prizes .container:after{width:85px;height:59px;background:url(../img/elements/prizes-left.png) 50% 50% no-repeat;background-size:contain;bottom:-30px;right:10px;z-index:2;transform:scaleX(-1);}
 .prizes-wrap .image{height:110px;justify-content:center;align-items:center;}
 .prizes-wrap .image img{max-height:100%;object-fit:contain;}
-.prizes-wrap .multiplier{margin:10px auto 10px auto;font-size:17px;line-height:20px;background-size:43px;padding:0 50px 0 0;}
+.prizes-wrap .multiplier{margin:10px auto 10px auto;font-size:17px;line-height:17px;background-size:43px;padding:0 50px 0 0;}
 .prizes-wrap .title{font-size:16px;padding:0 0 15px 0;}
-.prizes-wrap .multiplier span{font-size:33px;}
+.prizes-wrap .multiplier span{font-size:33px;line-height:33px;}
 .prizes-wrap .item:not(:last-child){margin-bottom:50px;}
 .prizes-wrap .modal{z-index:99;padding:40px 25px;}
 .modal-prize-wrap{flex-direction:column;}
@@ -542,10 +542,20 @@ form.registration .actions{padding:60px 0 0 0;}
 form.registration button{margin:40px auto 0 auto;height:46px;font-size:18px;}
 form.registration .radio-large{max-width:220px;margin:0 auto;position:relative;}
 form.registration .radio-large:after{content:'';position:absolute;width:85px;height:59px;background:url(../img/elements/prizes-left.png) 50% 50% no-repeat;background-size:contain;bottom:-30px;right:-50px;z-index:2;transform:scaleX(-1);}
-.inner-page.login .container:before{display:none;}
-form.login{padding:10px 0 35px 0;}
-form.login button{width:100%;max-width:255px;height:46px;font-size:18px;margin:0 auto;}
+.inner-page.login .container:before,.inner-page.forgot .container:before{display:none;}
+form.login,form.forgot{padding:10px 0 35px 0;}
+form.login button,form.forgot button{width:100%;max-width:255px;height:46px;font-size:18px;margin:0 auto;}
 .login-links{justify-content:center;align-items:center;}
-form.login .fields{position:relative;}
-form.login .fields:before{content:'';position:absolute;width:44px;height:30px;background:url(../img/elements/prizes-left.png) 50% 50% no-repeat;background-size:contain;top:-15px;left:-15px;z-index:2;transform:scaleX(-1);}
+form.login .fields,form.forgot .fields{position:relative;}
+form.login .fields:before,form.forgot .fields:before{content:'';position:absolute;width:44px;height:30px;background:url(../img/elements/prizes-left.png) 50% 50% no-repeat;background-size:contain;top:-15px;left:-15px;z-index:2;transform:scaleX(-1);}
+.inner-page.lk{padding:120px 0 70px 0;}
+.section-title.name{font-size:22px;width:calc(100% - 65px);min-width:inherit;max-width:inherit;padding:3px 0;}
+.inner-page .head .container{align-items:flex-start;min-height:inherit;justify-content:space-between;}
+.inner-page .scores{width:55px;height:55px;min-width:55px;position:relative;right:0;border-width:4px;font-size:9px;}
+.inner-page .scores span{font-size:18px;margin:0 0 2px 0;}
+.lk.checks .inner{padding:5px 0 0 0;}
+.c-checks .row.title{display:none;}
+.c-checks{padding:15px 0 0 0;}
+.lk .prizes-wrap{padding:15px 10px 0 10px;}
+.inner-page.lk .container:after{display:none;}
 }
