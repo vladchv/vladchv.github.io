@@ -539,6 +539,13 @@ form.registration .title{text-align:center;}
 form.registration .row{justify-content:center;}
 form.registration .row .item:not(:last-child){margin-right:50px;}
 form.registration .actions{padding:60px 0 0 0;}
-form.registration button{margin:40px auto 0 auto;height:46px;}
-form.registration .radio-large{max-width:220px;margin:0 auto;}
+form.registration button{margin:40px auto 0 auto;height:46px;font-size:18px;}
+form.registration .radio-large{max-width:220px;margin:0 auto;position:relative;}
+form.registration .radio-large:after{content:'';position:absolute;width:85px;height:59px;background:url(../img/elements/prizes-left.png) 50% 50% no-repeat;background-size:contain;bottom:-30px;right:-50px;z-index:2;transform:scaleX(-1);}
+.inner-page.login .container:before{display:none;}
+form.login{padding:10px 0 35px 0;}
+form.login button{width:100%;max-width:255px;height:46px;font-size:18px;margin:0 auto;}
+.login-links{justify-content:center;align-items:center;}
+form.login .fields{position:relative;}
+form.login .fields:before{content:'';position:absolute;width:44px;height:30px;background:url(../img/elements/prizes-left.png) 50% 50% no-repeat;background-size:contain;top:-15px;left:-15px;z-index:2;transform:scaleX(-1);}
 }
