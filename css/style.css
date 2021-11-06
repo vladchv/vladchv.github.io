@@ -544,7 +544,7 @@ form.registration .radio-large{max-width:220px;margin:0 auto;position:relative;}
 form.registration .radio-large:after{content:'';position:absolute;width:85px;height:59px;background:url(../img/elements/prizes-left.png) 50% 50% no-repeat;background-size:contain;bottom:-30px;right:-50px;z-index:2;transform:scaleX(-1);}
 .inner-page.login .container:before,.inner-page.forgot .container:before{display:none;}
 form.login,form.forgot{padding:10px 0 35px 0;}
-form.login button,form.forgot button{width:100%;max-width:255px;height:46px;font-size:18px;margin:0 auto;}
+form.login button,form.forgot button,form.delivery button{width:100%;max-width:255px;height:46px;font-size:18px;margin:0 auto;}
 .login-links{justify-content:center;align-items:center;}
 form.login .fields,form.forgot .fields{position:relative;}
 form.login .fields:before,form.forgot .fields:before{content:'';position:absolute;width:44px;height:30px;background:url(../img/elements/prizes-left.png) 50% 50% no-repeat;background-size:contain;top:-15px;left:-15px;z-index:2;transform:scaleX(-1);}
@@ -552,11 +552,31 @@ form.login .fields:before,form.forgot .fields:before{content:'';position:absolut
 .section-title.name{font-size:22px;width:calc(100% - 65px);min-width:inherit;max-width:inherit;padding:3px 0;}
 .inner-page .head .container{align-items:flex-start;min-height:inherit;justify-content:space-between;}
 .inner-page .scores{width:55px;height:55px;min-width:55px;position:relative;right:0;border-width:4px;font-size:9px;}
-.inner-page .scores span{font-size:18px;margin:0 0 2px 0;}
+.inner-page .scores span{font-size:18px;margin:0;}
 .lk.checks .inner{padding:5px 0 0 0;}
 .c-checks .row.title{display:none;}
 .c-checks{padding:15px 0 0 0;}
 .lk .prizes-wrap{padding:15px 0 0 0;margin:0;}
 .inner-page.lk .container:after{display:none;}
-.lk .prizes-wrap .item{background:rgba(255, 242, 227, 0.58);border:1px solid #CC9957;margin-top:0px;margin-bottom:30px;}
+.lk .prizes-wrap .item{background:rgba(255, 242, 227, 0.58);border:1px solid #CC9957;margin-top:0px;margin-bottom:30px;padding:20px 10px;box-shadow:0px 4px 10px rgba(243, 220, 187, 0.01);position:relative;}
+.lk .prizes-wrap .item .button{width:100%;max-width:255px;}
+.lk .orders{margin:0;border:0px;padding:25px 20px 10px 20px;background:#fff;border:1px solid #CC9957;box-shadow:0px 4px 10px rgba(243, 220, 187, 0.01);backdrop-filter:blur(30px);-webkit-backdrop-filter:blur(30px);}
+.lk .orders .item{border-bottom:1px solid #f1f1f1;padding:15px 0;}
+.lk .prizes-wrap .item:nth-child(2)::before{content:'';position:absolute;width:100px;height:74px;background:url(../img/elements/promo.png) 50% 50% no-repeat;background-size:contain;top:-15px;left:-20px;z-index:2;transform:scaleY(-1) rotate(90deg);}
+.lk .prizes-wrap .item:nth-child(3)::after{content:'';position:absolute;width:71px;height:49px;background:url(../img/elements/prizes-left.png) 50% 50% no-repeat;background-size:contain;top:-25px;right:-10px;z-index:2;transform:scaleX(-1);}
+.lk .orders .item.title{padding-bottom:20px;padding-top:0px;}
+.lk .orders .item:last-child{border:0px;}
+.modal.modal-delivery{padding:30px 20px;}
+.modal .modal-title{font-size:20px;padding:0 50px 20px 0;text-align:left;}
+.modal .modal-title br{display:none;}
+.modal{max-height:calc(100% - 40px);overflow-y:auto;}
+form.delivery .row{width:100%;flex-direction:column;}
+form.delivery .row.col-3>*,form.delivery .row.col-2>*{width:100%;margin:0 0 20px 0;}
+form.delivery .row.col-3>*:last-child,form.delivery .row.col-2>*:last-child{margin-bottom:0px;}
+.modal-delivery:before,.modal-delivery:after{display:none;}
+form.delivery{width:100%;}
+form.delivery .row.col-3:last-child{flex-direction:row;width:calc(100% + 20px);margin:0 -10px;}
+form.delivery .row.col-3:last-child>*{margin:0 10px;}
+form.delivery .row:not(:last-child){margin-bottom:20px;}
+form.delivery .actions{margin:30px 0 0 0;width:100%;max-width:100%;}
 }
