@@ -448,7 +448,7 @@ form.registration .radio-large{padding:0;}
 @media screen and (max-width:640px){
 .hide-desk{display:flex;}
 section.index-banner{padding:55px 0 210px 0;background:url(../img/bg/index-banner-mob.jpg) 50% 100% no-repeat;background-size:cover;}
-section.index-banner .desc{font-size:14px;}
+section.index-banner .desc{font-size:14px;padding:10px 0 0 0;}
 section.index-banner .buttons{margin:30px auto 0 auto;}
 section.index-banner .button{height:33px;font-size:12px;border-radius:3px;min-width:160px;padding:0 10px;}
 section.index-banner .button svg{width:19px;}
