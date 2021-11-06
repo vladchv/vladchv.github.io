@@ -443,6 +443,9 @@ form.registration .radio-large{padding:0;}
 .lk .prizes-wrap .item .title br{display:none;}
 .lk .prizes-wrap .item .multiplier{order:3;width:auto;margin-top:20px;}
 .lk .prizes-wrap .item .button{order:4;margin-top:20px;}
+.back-button.hide-desk{display:flex;}
+.back-button{position:fixed;top:30px;left:20px;z-index:999;}
+.back-button svg{fill:#fff;transition:.25s;}
 }
 
 @media screen and (max-width:640px){
@@ -524,5 +527,15 @@ footer .container:before{content:'';display:block;width:120px;height:93px;backgr
 footer .container:after{content:'';display:block;width:100px;height:93px;background:url(../img/elements/footer-right.png) 50% 50% no-repeat;background-size:contain;position:absolute;top:-83px;right:20px;z-index:2;}
 footer{padding:50px 0 40px 0;}
 footer .title{padding:0 0 7px 0;}
-.copyright{font-size:14px;}
+.copyright,.radio-large input[type="radio"] + label{font-size:14px;}
+.inner-page{background:linear-gradient(359.67deg, #FFEED8 0.28%, #FFEED8 10.44%, #FFF 29.14%, #FFF 55.22%, #FFEED8 83.99%);padding:120px 0 70px 0;}
+.inner-page .inner{padding:0;background:none;border:0px;}
+.inner-page .container:before{display:none;}
+form.registration .title{text-align:center;}
+.inner-page .section-title{padding:0 0 20px 0;}
+form.registration .row{justify-content:center;}
+form.registration .row .item:not(:last-child){margin-right:50px;}
+form.registration .actions{padding:60px 0 0 0;}
+form.registration button{margin:40px auto 0 auto;height:46px;}
+form.registration .radio-large{max-width:220px;margin:0 auto;}
 }
