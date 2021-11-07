@@ -624,3 +624,18 @@ form.delivery .row:first-child::after{content:'';position:absolute;width:50px;he
 .modal-download-check .steps-wrap.three .item:nth-child(1)::before{content:'';position:absolute;width:100px;height:74px;background:url(../img/elements/promo.png) 50% 50% no-repeat;background-size:contain;top:-5px;left:-20px;z-index:2;transform:scaleY(-1) rotate(90deg);}
 .modal-download-check .steps-wrap.three .item:nth-child(3)::after{content:'';position:absolute;width:71px;height:49px;background:url(../img/elements/prizes-left.png) 50% 50% no-repeat;background-size:contain;top:-15px;right:-10px;z-index:2;transform:scaleX(-1);}
 form.download-check .row:nth-child(3)::after{content:'';position:absolute;width:71px;height:49px;background:url(../img/elements/prizes-left.png) 50% 50% no-repeat;background-size:contain;top:-25px;right:-10px;z-index:2;transform:scaleX(-1);}
+.inner-page.quiz .inner{background:none;backdrop-filter:none;-webkit-backdrop-filter:none;}
+form.questions .title{font-size:18px;padding:0;}
+.inner-page.quiz {background:linear-gradient(359.67deg, #FFEED8 0.6%, #FFEED8 4.44%, rgba(248, 241, 232, 0) 32.14%, rgba(248, 241, 232, 0) 5.22%, #FFEED8 73.99%), url(../img/bg/quiz-mob.jpg) 50% 50% no-repeat;background-size: cover;}
+form.questions .fields input + label:before,form.questions .fields input + label:after{display:none;}
+form.questions .fields input + label{background:#fff;display:flex;padding:13px 15px;align-items:center;border-radius:6px;border:1px solid #C4C4C4;justify-content:center;text-align:center;font-size:16px;transition:.25s;}
+form.questions .fields input:checked + label{background:#CC9957;color:#fff;border-color:#CC9957;}
+form.questions .radio-large .item:not(:last-child){margin-bottom:20px;}
+form.questions button{height:46px;font-size:18px;}
+form.questions .fields{padding:25px 0 20px 0;}
+form.questions .desc{color:#fff;}
+form.questions .timer{width:auto;margin:15px auto;padding:10px 15px;background:#fff;border-radius:6px;border:1px solid #C4C4C4;}
+.inner-page.quiz .modal .desc{font-size:23px;}
+.inner-page.quiz .modal{padding:30px 20px;z-index:8;max-height:calc(100% + 2px);}
+.inner-page.quiz .modal:after{display:none;}
+}
