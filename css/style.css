@@ -551,7 +551,7 @@ form.login .fields:before,form.forgot .fields:before{content:'';position:absolut
 .inner-page.lk{padding:120px 0 70px 0;}
 .section-title.name{font-size:22px;width:calc(100% - 65px);min-width:inherit;max-width:inherit;padding:3px 0;}
 .inner-page .head .container{align-items:flex-start;min-height:inherit;justify-content:space-between;}
-.inner-page .scores{width:55px;height:55px;min-width:55px;position:relative;right:0;border-width:4px;font-size:9px;}
+.inner-page .scores{width:55px;height:55px;min-width:55px;position:relative;right:0;border-width:4px;font-size:9px;padding:0 0 5px 0;}
 .inner-page .scores span{font-size:18px;margin:0;}
 .lk.checks .inner{padding:5px 0 0 0;}
 .c-checks .row.title{display:none;}
