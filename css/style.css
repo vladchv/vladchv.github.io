@@ -605,9 +605,10 @@ form.delivery .actions{margin:30px 0 0 0;width:100%;max-width:100%;padding-botto
 .modal-download-check .steps-wrap{padding:5px 0 0 0;display:block;}
 .modal-download-check .steps-wrap.three .item:not(:last-child){margin-bottom:30px;}
 .modal-download-check .buttons{display:block;flex-direction:column;max-width:255px;padding:30px 0 0 0;}
+.modal-download-check .buttons .button:first-child{margin-bottom:20px!important;}
 .modal-download-check .buttons>*,.modal-download-check-form .buttons .button{margin:10px 0;}
 .modal-download-check .modal-content,.modal-download-check-form .modal-content{padding-bottom:20px;}
-.modal-download-check .modal-close,.modal-delivery .modal-close{top:20px;right:20px;}
+.modal-download-check .modal-close,.modal-delivery .modal-close{top:22px;right:20px;}
 .modal-download-check .steps-wrap .step{min-height:50px;}
 form.download-check{display:block;}
 form.download-check .row{flex-direction:column;}
@@ -615,4 +616,5 @@ form.download-check .row label{font-size:16px;width:100%;padding:0 0 10px 0;}
 form.download-check button{height:46px;max-width:255px;margin-bottom:10px;}
 .modal-download-check-form .buttons .button{max-width:255px;margin:10px auto;}
 .modal-download-check-form .buttons{display:block;}
+.modal-download-check .steps-wrap .step span{margin-bottom:0px;}
 }
