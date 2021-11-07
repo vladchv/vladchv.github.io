@@ -638,4 +638,7 @@ form.questions .timer{width:auto;margin:15px auto;padding:10px 15px;background:#
 .inner-page.quiz .modal .desc{font-size:23px;}
 .inner-page.quiz .modal{padding:30px 20px;z-index:8;max-height:calc(100% + 2px);}
 .inner-page.quiz .modal:after{display:none;}
+form.questions .radio-large .item{position:relative;}
+form.questions .radio-large .item:nth-child(2n+2)::after{content:'';position:absolute;width:40px;height:27px;background:url(../img/elements/prizes-left.png) 50% 50% no-repeat;background-size:contain;top:-15px;right:-10px;z-index:2;transform:scaleX(-1);}
+form.questions .radio-large .item:nth-child(3n+3)::after{content:'';position:absolute;width:40px;height:27px;background:url(../img/elements/prizes-left.png) 50% 50% no-repeat;background-size:contain;bottom:-10px;left:-10px;z-index:2;}
 }
