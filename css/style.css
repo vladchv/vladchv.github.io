@@ -566,7 +566,7 @@ form.login .fields:before,form.forgot .fields:before{content:'';position:absolut
 .lk .prizes-wrap .item:nth-child(3)::after{content:'';position:absolute;width:71px;height:49px;background:url(../img/elements/prizes-left.png) 50% 50% no-repeat;background-size:contain;top:-25px;right:-10px;z-index:2;transform:scaleX(-1);}
 .lk .orders .item.title{padding-bottom:20px;padding-top:0px;}
 .lk .orders .item:last-child{border:0px;}
-.modal.modal-delivery,.modal.modal-download-check{padding:30px 20px 0 20px;}
+.modal.modal-delivery,.modal.modal-download-check,.modal.modal-download-check-form{padding:30px 20px 0 20px;}
 .modal.modal-delivery.modal-content,form.delivery,.modal-title,form.delivery .actions{display:block;height:auto;}
 .modal .modal-title{font-size:20px;padding:0 50px 20px 0;text-align:left;}
 .modal .modal-title br{display:none;}
@@ -601,11 +601,17 @@ form.delivery .actions{margin:30px 0 0 0;width:100%;max-width:100%;padding-botto
 .checks-wrap .c-scores:before{content:attr(data-title);width:50%;display:block;}
 .checks-wrap .row:nth-child(2n+2)::after{content:'';position:absolute;width:100px;height:74px;background:url(../img/elements/promo.png) 50% 50% no-repeat;background-size:contain;top:-15px;left:-20px;z-index:2;transform:scaleY(-1) rotate(90deg);}
 .checks-wrap .row:nth-child(3n+3)::after{content:'';position:absolute;width:71px;height:49px;background:url(../img/elements/prizes-left.png) 50% 50% no-repeat;background-size:contain;top:-25px;right:-10px;z-index:2;transform:scaleX(-1);}
-.modal-download-check:before,.modal-download-check:after{display:none;}
-.modal-download-check .steps-wrap{padding:5px 0 0 0;}
+.modal-download-check:before,.modal-download-check:after,.modal-download-check-form:before,.modal-download-check-form:after{display:none;}
+.modal-download-check .steps-wrap{padding:5px 0 0 0;display:block;}
 .modal-download-check .steps-wrap.three .item:not(:last-child){margin-bottom:30px;}
-.modal-download-check .buttons{flex-direction:column;max-width:255px;padding:30px 0 0 0;}
+.modal-download-check .buttons{display:block;flex-direction:column;max-width:255px;padding:30px 0 0 0;}
 .modal-download-check .buttons>*,.modal-download-check-form .buttons .button{margin:10px 0;}
-.modal-download-check .modal-content{padding-bottom:20px;}
+.modal-download-check .modal-content,.modal-download-check-form .modal-content{padding-bottom:20px;}
 .modal-download-check .modal-close,.modal-delivery .modal-close{top:20px;right:20px;}
+.modal-download-check .steps-wrap .step{min-height:50px;}
+form.download-check .row{flex-direction:column;}
+form.download-check .row label{font-size:16px;width:100%;padding:0 0 10px 0;}
+form.download-check button{height:46px;max-width:255px;margin-bottom:10px;}
+.modal-download-check-form .buttons .button{max-width:255px;margin:10px auto;}
+.modal-download-check-form .buttons{display:block;}
 }
