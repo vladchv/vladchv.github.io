@@ -551,7 +551,7 @@ form.login .fields:before,form.forgot .fields:before{content:'';position:absolut
 .inner-page.lk{padding:120px 0 70px 0;}
 .section-title.name{font-size:22px;width:calc(100% - 65px);min-width:inherit;max-width:inherit;padding:3px 0;}
 .inner-page .head .container{align-items:flex-start;min-height:inherit;justify-content:space-between;}
-.inner-page .scores{width:55px;height:55px;min-width:55px;position:relative;right:0;border-width:4px;font-size:9px;padding:0 0 5px 0;}
+.inner-page .scores{width:55px;height:55px;min-width:55px;position:relative;right:0;border-width:4px;font-size:9px;padding:0 0 2px 0;}
 .inner-page .scores span{font-size:18px;margin:0;}
 .lk.checks .inner{padding:5px 0 0 0;}
 .c-checks .row.title{display:none;}
@@ -607,13 +607,13 @@ form.delivery .actions{margin:30px 0 0 0;width:100%;max-width:100%;padding-botto
 .modal-download-check .buttons{display:block;flex-direction:column;max-width:255px;padding:30px 0 0 0;}
 .modal-download-check .buttons .button:first-child{margin-bottom:20px!important;}
 .modal-download-check .buttons>*,.modal-download-check-form .buttons .button{margin:10px 0;}
-.modal-download-check .modal-content,.modal-download-check-form .modal-content{padding-bottom:30px;}
+.modal-download-check .modal-content,.modal-download-check-form .modal-content{display:block;padding-bottom:30px;}
 .modal-download-check .modal-close,.modal-delivery .modal-close{top:22px;right:20px;}
 .modal-download-check .steps-wrap .step{min-height:50px;}
 form.download-check{display:block;}
 form.download-check .row{flex-direction:column;}
 form.download-check .row label{font-size:16px;width:100%;padding:0 0 10px 0;}
-form.download-check button{height:46px;max-width:255px;margin-bottom:10px;}
+form.download-check button{height:46px;max-width:255px;margin-bottom:10px;font-size:18px;}
 .modal-download-check-form .buttons .button{max-width:255px;margin:10px auto;}
 .modal-download-check-form .buttons{display:block;}
 .modal-download-check .steps-wrap .step span{margin-bottom:-2px;}
