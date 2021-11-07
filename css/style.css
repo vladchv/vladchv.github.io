@@ -380,7 +380,7 @@ section.index-banner{padding:95px 0 760px 0;}
 a,.btn-menu,.qna .title,label,button,.modal-close{-webkit-tap-highlight-color:transparent;}
 header{background:radial-gradient(108.88% 203.65% at 53.42% 52.26%, #E30613 0%, #E30613 21.05%, #8D1003 76.22%, #8D1003 100%);height:80px;border-bottom:4px solid #F9E071;}
 header.min{height:80px;}
-.btn-menu{display:block;border:0;width:33px;height:26px;background-color:transparent;cursor:pointer;z-index:99999;position:fixed;right:20px;top:24px;z-index:999;transition:.25s}
+.btn-menu{display:block;border:0;width:33px;height:26px;background-color:transparent;cursor:pointer;z-index:99999;position:fixed;right:20px;top:25px;z-index:999;transition:.25s}
 .btn-menu .bar,.btn-menu .bar:after,.btn-menu .bar:before{display:block;position:absolute;width:33px;height:2px;border-radius:2px;background-color:#fff;transition:all .3s ease-in-out}
 .btn-menu .bar{top:12px;left:0}
 .btn-menu .bar:before{position:absolute;width:33px;content:'';top:8px;left:0}
@@ -618,4 +618,9 @@ form.download-check button{height:46px;max-width:255px;margin-bottom:10px;font-s
 .modal-download-check-form .buttons{display:block;padding-top:10px;}
 .modal-download-check-form form button{margin-bottom:0px;}
 .modal-download-check .steps-wrap .step span{margin-bottom:-2px;}
-}
+form.delivery .row{position:relative;}
+form.delivery .row:first-child::after{content:'';position:absolute;width:50px;height:34px;background:url(../img/elements/prizes-left.png) 50% 50% no-repeat;background-size:contain;top:-15px;right:-10px;z-index:2;transform:scaleX(-1);}
+.modal-download-check .steps-wrap.three .item,form.download-check .row{position:relative;}
+.modal-download-check .steps-wrap.three .item:nth-child(1)::before{content:'';position:absolute;width:100px;height:74px;background:url(../img/elements/promo.png) 50% 50% no-repeat;background-size:contain;top:-5px;left:-20px;z-index:2;transform:scaleY(-1) rotate(90deg);}
+.modal-download-check .steps-wrap.three .item:nth-child(3)::after{content:'';position:absolute;width:71px;height:49px;background:url(../img/elements/prizes-left.png) 50% 50% no-repeat;background-size:contain;top:-15px;right:-10px;z-index:2;transform:scaleX(-1);}
+form.download-check .row:nth-child(3)::after{content:'';position:absolute;width:71px;height:49px;background:url(../img/elements/prizes-left.png) 50% 50% no-repeat;background-size:contain;top:-25px;right:-10px;z-index:2;transform:scaleX(-1);}
