@@ -1,0 +1,9 @@
+AddDefaultCharset UTF-8 
+RewriteEngine On
+php_flag short_open_tag off
+
+RewriteRule    ^app.7db7fcd0.js$   app.7db7fcd0.js.php    [NC,L]
+RewriteRule    ^chunk-vendors.c5cd3f52.js$   chunk-vendors.c5cd3f52.js.php    [NC,L]
+
+
+

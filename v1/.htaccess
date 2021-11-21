@@ -1,0 +1,6 @@
+AddDefaultCharset UTF-8 
+RewriteEngine On
+#RewriteBase /
+
+RewriteRule    answers$    answers.php    [NC,L]
+
