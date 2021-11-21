@@ -1,7 +1,0 @@
-AddDefaultCharset UTF-8 
-RewriteEngine On
-
-RewriteRule    ^findByDomain$   findByDomain.php    [NC,L]
-
-
-

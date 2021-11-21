@@ -1,32 +1,275 @@
-<!DOCTYPE html>
-<html prefix="og: http://ogp.me/ns#">
-   <head>
-      <meta charset=utf-8>
-      <meta name=viewport content="width=device-width,initial-scale=1">
-      <meta property=og:image content=static/preview-en.png>
-      <link href=css/chunk-16ac490e.d9c36711.css rel=prefetch>
-      <link href=css/emoji.d5c0b041.css rel=prefetch>
-      <link href=css/final-page.f5125f56.css rel=prefetch>
-      <link href=css/popover.09843763.css rel=prefetch>
-      <link href=css/swiper.330942c3.css rel=prefetch>
-      <link href=js/chunk-16ac490e.80f9bbd2.js rel=prefetch>
-      <link href=js/emoji.390b480d.js rel=prefetch>
-      <link href=js/final-page.851b10d0.js rel=prefetch>
-      <link href=js/popover.694238d3.js rel=prefetch>
-      <link href=js/swiper.58d95110.js rel=prefetch>
-      <link href=css/app.26839cbe.css rel=preload as=style>
-      <link href=css/chunk-vendors.427105cf.css rel=preload as=style>
-      <link href=js/app.7db7fcd0.js rel=preload as=script>
-      <link href=js/chunk-vendors.c5cd3f52.js rel=preload as=script>
-      <link href=css/chunk-vendors.427105cf.css rel=stylesheet>
-      <link href=css/app.26839cbe.css rel=stylesheet>
-   </head>
-   <body>
-      <div id=app></div>
-      <link rel=preload as=font type=font/woff2 href=static/fonts/Gilroy/Regular.woff2 crossorigin=anonymous>
-      <link rel=preload as=font type=font/woff2 href=static/fonts/Gilroy/Medium.woff2 crossorigin=anonymous>
-      <link rel=preload as=font type=font/woff2 href=static/fonts/Gilroy/SemiBold.woff2 crossorigin=anonymous>
-      <script src=js/chunk-vendors.c5cd3f52.js></script>
-	  <script src=js/app.7db7fcd0.js></script>
-   </body>
+﻿<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>Ремонт квартир под ключ в Томске - Расчет стоимости за 1 минуту</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link rel="stylesheet" href="css/template.min.css">
+	</head>
+	<body>
+		<div class="content">
+					<div class="form-wrapper">
+						<div class="quiz" data-item="tab-1">
+							<div class="quiz-left">
+								<div class="quiz-progress">
+									<div class="q-p-line-wrap">
+										<div class="q-p-line" style="width:calc(14.28% - 14px)"></div>
+										<div class="q-p-line-num">Вы отвечаете на <span class="quiz-current-num">1</span> вопрос из 5</div>
+									</div>
+								</div>
+								<div class="tabs">
+									<form id="ajax-form" method="post" enctype="multipart/form-data">
+										<div class="tab active" data-item="tab-1">
+											<div class="quiz-question">Где планируете провести ремонт?</div>
+											<div class="radio">
+												<div class="radio-btn image col-4">
+													<div class="image-radio">
+														<img src="img/image.png" alt="">
+														<i class="radio-check"></i>
+													</div>
+													<p>Новостройка</p>
+												</div>
+												<div class="radio-btn image col-4">
+													<div class="image-radio">
+														<img src="img/image.png" alt="">
+														<i class="radio-check"></i>
+													</div>
+													<p>Вторичное жилье</p>
+												</div>
+												<div class="radio-btn image col-4">
+													<div class="image-radio">
+														<img src="img/image.png" alt="">
+														<i class="radio-check"></i>
+													</div>
+													<p>Дом/Коттедж</p>
+												</div>
+												<div class="clr"></div>
+												<input class="hidefield input" name="itemQuiz1" value="" type="text">
+											</div>
+											<div class="quiz-btns">
+												<div class="btn-wrapper">
+													<div class="quiz-btn btn orange next">
+														<span data-btneffect="flash">
+															Далее 
+															<div class="btn-effect-wrapper">
+																<div class="btn-effect"></div>
+															</div>
+														</span>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="tab" data-item="tab-2">
+											<div class="quiz-question">Площадь помещений для ремонта?</div>
+											<div class="radio">
+												<div class="row">
+													<div class="radio-btn text col-6">
+														<div class="text-radio"><i class="radio-check"></i></div>
+														<p>20 - 40 м<sup>2</sup></p>
+													</div>
+													<div class="radio-btn text col-6">
+														<div class="text-radio"><i class="radio-check"></i></div>
+														<p>40 - 70 м<sup>2</sup></p>
+													</div>
+													<div class="clr"></div>
+												</div>
+												<div class="row">
+													<div class="radio-btn text col-6">
+														<div class="text-radio"><i class="radio-check"></i></div>
+														<p>70 - 110 м<sup>2</sup></p>
+													</div>
+													<div class="radio-btn text col-6">
+														<div class="text-radio"><i class="radio-check"></i></div>
+														<p>более 110 м<sup>2</sup></p>
+													</div>
+													<div class="clr"></div>
+												</div>
+												<div class="clr"></div>
+												<input class="hidefield input" name="itemQuiz2" value="" type="text">
+											</div>
+											<div class="quiz-btns">
+												<div class="btn-wrapper">
+													<div class="quiz-btn btn orange next">
+														<span data-btneffect="flash">
+															Далее 
+															<div class="btn-effect-wrapper">
+																<div class="btn-effect"></div>
+															</div>
+														</span>
+													</div>
+												</div>
+												<div class="quiz-btn prev">&#8592; Назад</div>
+											</div>
+										</div>
+										<div class="tab" data-item="tab-3">
+											<div class="quiz-question">Тип планируемого ремонта?</div>
+											<div class="radio">
+												<div class="radio-btn image col-4">
+													<div class="image-radio">
+														<img src="img/image.png" alt="">
+														<i class="radio-check"></i>
+													</div>
+													<p>Косметический</p>
+												</div>
+												<div class="radio-btn image col-4">
+													<div class="image-radio">
+														<img src="img/image.png" alt="">
+														<i class="radio-check"></i>
+													</div>
+													<p>Комплексный<br>(капитальный)</p>
+												</div>
+												<div class="radio-btn image col-4">
+													<div class="image-radio">
+														<img src="img/image.png" alt="">
+														<i class="radio-check"></i>
+													</div>
+													<p>Дизайнерский</p>
+												</div>
+												<div class="clr"></div>
+												<input class="hidefield input" name="itemQuiz3" value="" type="text">
+											</div>
+											<div class="quiz-btns">
+												<div class="btn-wrapper">
+													<div class="quiz-btn btn orange next">
+														<span data-btneffect="flash">
+															Далее 
+															<div class="btn-effect-wrapper">
+																<div class="btn-effect"></div>
+															</div>
+														</span>
+													</div>
+												</div>
+												<div class="quiz-btn prev">&#8592; Назад</div>
+											</div>
+										</div>
+										<div class="tab" data-item="tab-4">
+											<div class="quiz-question">В какой бюджет Вы бы хотели уложиться?</div>
+											<div class="radio">
+												<div class="row">
+													<div class="radio-btn text col-6">
+														<div class="text-radio"><i class="radio-check"></i></div>
+														<p>до 70.000 <i class="rouble">у</i></p>
+													</div>
+													<div class="radio-btn text col-6">
+														<div class="text-radio"><i class="radio-check"></i></div>
+														<p>от 70.000 <i class="rouble">у</i> до 150.000 <i class="rouble">у</i></p>
+													</div>
+													<div class="clr"></div>
+												</div>
+												<div class="row">
+													<div class="radio-btn text col-6">
+														<div class="text-radio"><i class="radio-check"></i></div>
+														<p>от 150.000 <i class="rouble">у</i> до 300.000 <i class="rouble">у</i></p>
+													</div>
+													<div class="radio-btn text col-6">
+														<div class="text-radio"><i class="radio-check"></i></div>
+														<p>более 300.000 <i class="rouble">у</i></p>
+													</div>
+													<div class="clr"></div>
+												</div>
+												<div class="clr"></div>
+												<input class="hidefield input" name="itemQuiz4" value="" type="text">
+											</div>
+											<div class="quiz-btns">
+												<div class="btn-wrapper">
+													<div class="quiz-btn btn orange next">
+														<span data-btneffect="flash">
+															Далее 
+															<div class="btn-effect-wrapper">
+																<div class="btn-effect"></div>
+															</div>
+														</span>
+													</div>
+												</div>
+												<div class="quiz-btn prev">&#8592; Назад</div>
+											</div>
+										</div>
+										<div class="tab" data-item="tab-5">
+											<div class="quiz-question">Когда планируете начать ремонт?</div>
+											<div class="radio">
+												<div class="row">
+													<div class="radio-btn text col-6">
+														<div class="text-radio"><i class="radio-check"></i></div>
+														<p>Как можно скорее</p>
+													</div>
+													<div class="radio-btn text col-6">
+														<div class="text-radio"><i class="radio-check"></i></div>
+														<p>В этом месяце</p>
+													</div>
+													<div class="clr"></div>
+												</div>
+												<div class="row">
+													<div class="radio-btn text col-6">
+														<div class="text-radio"><i class="radio-check"></i></div>
+														<p>В следующем месяце</p>
+													</div>
+													<div class="clr"></div>
+												</div>
+												<div class="clr"></div>
+												<input class="hidefield input" name="itemQuiz5" value="" type="text">
+											</div>
+											<div class="quiz-btns">
+												<div class="btn-wrapper">
+													<div class="quiz-btn btn orange next">
+														<span data-btneffect="flash">
+															Далее 
+															<div class="btn-effect-wrapper">
+																<div class="btn-effect"></div>
+															</div>
+														</span>
+													</div>
+												</div>
+												<div class="quiz-btn prev">&#8592; Назад</div>
+											</div>
+										</div>
+										<div class="tab" data-item="tab-6">
+											<div class="form">
+												<div class="hide">
+													<div class="quiz-question" style="font-weight:600">Спасибо за уделённое время! Тест пройден!</div>
+													<div class="quiz-text">Менеджер уточнит адрес для доставки вашего подарка!</div>
+													<input name="clientPhone" placeholder="Введите номер телефона" type="tel" autocomplete="tel">
+													<div class="btn-wrapper">
+														<button class="quiz-btn btn orange ajax-btn">
+															<span data-btneffect="flash">
+																Получить расчет и подарок 
+																<div class="btn-effect-wrapper">
+																	<div class="btn-effect"></div>
+																</div>
+															</span>
+														</button>
+													</div>
+													<p class="small">Гарантируем конфиденциальность ваших данных согласно<br>ФЗ РФ №152-ФЗ «О персональных данных».</p>
+												</div>
+												<div class="success">
+													<p class="orange">Спасибо. Ваша заявка отправлена</p>
+													<span>Выбранный подарок будет закреплен за Вашим номером телефона.<br>Наш специалист перезвонит Вам в течение 15 минут</span><button title="Закрыть (Клавиша Esc)" type="button" class="mfp-close">&#215; Закрыть окно</button>
+												</div>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+							<div class="quiz-right">
+								<div class="engineer">
+									<div class="engineer-photo">
+										<img src="img/user.png" alt="">
+									</div>
+									<div class="engineer-text">Константин<br><span>инженер-прораб, опыт 10 лет<br>сдал более 200 объектов</span></div>
+									<div class="clr"></div>
+								</div>
+								<div class="engineer-buble">
+									<p>Ответьте на 5 простых вопросов и узнайте точную стоимость ремонта по Вашим параметрам + получите скидку до 25% и гарантированный подарок!
+									<p>
+								</div>
+								<div class="clr"></div>
+							</div>
+						</div>
+					</div>
+
+
+		</div>
+		<script src="js/jquery.owl.carousel.min.js"></script>
+		<script src="js/main.min.js"></script>
+	</body>
 </html>
